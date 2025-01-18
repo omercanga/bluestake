@@ -24,29 +24,66 @@ class LanguageManager {
     }
 
     createButtons(container) {
-        // Tüm dilleri göster
-        const languages = {
-            'en': 'EN', 'tr': 'TR', 'es': 'ES', 'de': 'DE', 'fr': 'FR',
-            'it': 'IT', 'pt': 'PT', 'nl': 'NL', 'pl': 'PL', 'cs': 'CS',
-            'da': 'DA', 'fi': 'FI', 'ro': 'RO', 'bg': 'BG', 'el': 'EL',
-            'uk': 'UA', 'vi': 'VI', 'id': 'ID', 'ru': 'RU', 'ja': 'JP',
-            'zh': 'CN', 'ko': 'KR', 'ar': 'AR', 'hi': 'HI', 'th': 'TH',
+        // Dilleri grupla
+        const mainLanguages = {
+            'en': 'EN',
+            'tr': 'TR',
+            'es': 'ES',
+            'de': 'DE',
+            'fr': 'FR',
+            'it': 'IT',
+            'pt': 'PT',
+            'nl': 'NL',
+            'pl': 'PL'
+        };
+
+        const otherLanguages = {
+            'cs': 'CS',
+            'da': 'DA',
+            'fi': 'FI',
+            'ro': 'RO',
+            'bg': 'BG',
+            'el': 'EL',
+            'uk': 'UA',
+            'vi': 'VI',
+            'id': 'ID',
+            'ru': 'RU',
+            'ja': 'JP',
+            'zh': 'CN',
+            'ko': 'KR',
+            'ar': 'AR',
+            'hi': 'HI',
+            'th': 'TH',
             'he': 'HE'
         };
 
         container.innerHTML = '';
 
-        Object.entries(languages).forEach(([code, label]) => {
-            // Sadece çevirisi olan dilleri göster
+        // Önce ana dilleri ekle
+        Object.entries(mainLanguages).forEach(([code, label]) => {
             if (this.translations[code]) {
-                const btn = document.createElement('button');
-                btn.type = 'button';
-                btn.className = 'language-button';
-                btn.textContent = label;
-                btn.onclick = () => this.setLanguage(code);
-                container.appendChild(btn);
+                this.createButton(container, code, label);
             }
         });
+
+        // Sonra diğer dilleri ekle
+        Object.entries(otherLanguages).forEach(([code, label]) => {
+            if (this.translations[code]) {
+                this.createButton(container, code, label);
+            }
+        });
+    }
+
+    createButton(container, code, label) {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'language-button';
+        btn.textContent = label;
+        if (code === this.currentLang) {
+            btn.classList.add('current-lang');
+        }
+        btn.onclick = () => this.setLanguage(code);
+        container.appendChild(btn);
     }
 
     setLanguage(lang) {
