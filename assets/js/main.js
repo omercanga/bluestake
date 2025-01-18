@@ -1,13 +1,12 @@
 class LanguageManager {
     constructor() {
-        // Translations kontrolü
         if (typeof translations === 'undefined') {
             console.error('Translations not found!');
             return;
         }
 
         this.translations = translations;
-        this.currentLang = 'en';
+        this.currentLang = localStorage.getItem('selectedLanguage') || 'en';
         this.init();
     }
 
@@ -21,22 +20,32 @@ class LanguageManager {
         // Dil butonlarını oluştur
         this.createButtons(container);
         // Varsayılan dili uygula
-        this.setLanguage('en');
+        this.setLanguage(this.currentLang);
     }
 
     createButtons(container) {
-        const languages = [
-            { code: 'en', label: 'EN' },
-            { code: 'tr', label: 'TR' }
-        ];
+        // Tüm dilleri göster
+        const languages = {
+            'en': 'EN', 'tr': 'TR', 'es': 'ES', 'de': 'DE', 'fr': 'FR',
+            'it': 'IT', 'pt': 'PT', 'nl': 'NL', 'pl': 'PL', 'cs': 'CS',
+            'da': 'DA', 'fi': 'FI', 'ro': 'RO', 'bg': 'BG', 'el': 'EL',
+            'uk': 'UA', 'vi': 'VI', 'id': 'ID', 'ru': 'RU', 'ja': 'JP',
+            'zh': 'CN', 'ko': 'KR', 'ar': 'AR', 'hi': 'HI', 'th': 'TH',
+            'he': 'HE'
+        };
 
-        languages.forEach(lang => {
-            const btn = document.createElement('button');
-            btn.type = 'button';
-            btn.className = 'language-button';
-            btn.textContent = lang.label;
-            btn.onclick = () => this.setLanguage(lang.code);
-            container.appendChild(btn);
+        container.innerHTML = '';
+
+        Object.entries(languages).forEach(([code, label]) => {
+            // Sadece çevirisi olan dilleri göster
+            if (this.translations[code]) {
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = 'language-button';
+                btn.textContent = label;
+                btn.onclick = () => this.setLanguage(code);
+                container.appendChild(btn);
+            }
         });
     }
 
@@ -47,6 +56,8 @@ class LanguageManager {
         }
 
         this.currentLang = lang;
+        localStorage.setItem('selectedLanguage', lang);
+        document.documentElement.lang = lang;
         this.updateContent();
         this.updateButtons();
     }
