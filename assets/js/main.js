@@ -6,10 +6,8 @@ class LanguageManager {
     }
 
     init() {
-        document.addEventListener('DOMContentLoaded', () => {
-            this.setLanguage(this.currentLang);
-            this.setupLanguageButtons();
-        });
+        this.setLanguage(this.currentLang);
+        this.setupLanguageButtons();
     }
 
     setLanguage(lang) {
@@ -19,7 +17,6 @@ class LanguageManager {
         this.currentLang = lang;
         localStorage.setItem('selectedLanguage', lang);
         document.documentElement.lang = lang;
-        document.documentElement.dir = ['ar', 'he'].includes(lang) ? 'rtl' : 'ltr';
         
         this.updateContent();
         this.updateLanguageButtons();
@@ -44,7 +41,7 @@ class LanguageManager {
         
         container.innerHTML = '';
         
-        const languageDisplayNames = {
+        const languages = {
             'en': 'EN',
             'tr': 'TR',
             'es': 'ES',
@@ -56,7 +53,7 @@ class LanguageManager {
             'pl': 'PL'
         };
 
-        Object.entries(languageDisplayNames).forEach(([lang, display]) => {
+        Object.entries(languages).forEach(([lang, display]) => {
             const button = document.createElement('button');
             button.className = 'language-button';
             button.textContent = display;
@@ -65,7 +62,11 @@ class LanguageManager {
                 button.classList.add('current-lang');
             }
             
-            button.addEventListener('click', () => this.setLanguage(lang));
+            button.onclick = () => {
+                this.setLanguage(lang);
+                this.updateLanguageButtons();
+            };
+            
             container.appendChild(button);
         });
     }
@@ -73,14 +74,12 @@ class LanguageManager {
     updateLanguageButtons() {
         document.querySelectorAll('.language-button').forEach(button => {
             button.classList.remove('current-lang');
-            if (button.textContent.toLowerCase() === this.currentLang.toUpperCase()) {
+            if (button.textContent === this.currentLang.toUpperCase()) {
                 button.classList.add('current-lang');
             }
         });
     }
 }
 
-// Initialize language manager when DOM is ready
-document.addEventListener('DOMContentLoaded', () => {
-    window.langManager = new LanguageManager();
-}); 
+// Sayfa yüklendiğinde dil yöneticisini başlat
+const langManager = new LanguageManager(); 

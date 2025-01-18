@@ -213,12 +213,17 @@ footer {
 
 @media (max-width: 768px) {
     .language-selector {
+        position: fixed;
         top: auto;
-        bottom: 80px;
-        right: 10px;
-        transform: none;
+        bottom: 60px;
+        right: 50%;
+        transform: translateX(50%);
         flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
         border-radius: 10px;
+        max-width: 90%;
+        gap: 0.5rem;
     }
 }
 
