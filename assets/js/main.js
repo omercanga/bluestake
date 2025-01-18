@@ -1,92 +1,52 @@
 class LanguageManager {
     constructor() {
-        // Translations objesinin yüklenmesini bekle
-        this.waitForTranslations();
-    }
-
-    waitForTranslations() {
-        if (window.translations) {
-            this.translations = window.translations;
-            this.initialize();
-        } else {
-            setTimeout(() => this.waitForTranslations(), 100);
-        }
-    }
-
-    initialize() {
+        // Global translations objesini al
+        this.translations = window.translations;
         this.currentLang = localStorage.getItem('selectedLanguage') || 'en';
-        this.setupLanguageButtons();
-        this.applyLanguage(this.currentLang);
+        this.init();
     }
 
-    setupLanguageButtons() {
-        const container = document.querySelector('.language-selector');
-        if (!container) return;
-
-        container.innerHTML = '';
-
-        const languages = {
-            'en': 'English',
-            'tr': 'Türkçe',
-            'es': 'Español',
-            'de': 'Deutsch',
-            'fr': 'Français',
-            'it': 'Italiano',
-            'pt': 'Português',
-            'nl': 'Nederlands',
-            'pl': 'Polski'
-        };
-
-        Object.entries(languages).forEach(([code, name]) => {
-            const button = document.createElement('button');
-            button.type = 'button';
-            button.className = 'language-button';
-            button.textContent = code.toUpperCase();
-            button.title = name;
-
-            if (code === this.currentLang) {
-                button.classList.add('current-lang');
-            }
-
-            button.addEventListener('click', () => {
-                if (this.translations && this.translations[code]) {
-                    this.applyLanguage(code);
-                }
-            });
-
-            container.appendChild(button);
-        });
-    }
-
-    applyLanguage(lang) {
-        // Dil çevirilerinin varlığını kontrol et
-        if (!this.translations || !this.translations[lang]) {
-            console.warn(`No translations found for ${lang}, falling back to English`);
-            lang = 'en';
-            
-            // İngilizce çeviriler de yoksa işlemi durdur
-            if (!this.translations || !this.translations[lang]) {
-                console.error('No translations available');
-                return;
-            }
+    init() {
+        if (!this.translations) {
+            console.error('Translations not loaded, retrying...');
+            setTimeout(() => this.init(), 100);
+            return;
         }
 
-        // Dili ayarla
+        const browserLang = this.getBrowserLanguage();
+        this.setLanguage(browserLang);
+        this.setupLanguageButtons();
+    }
+
+    getBrowserLanguage() {
+        const languages = navigator.languages || [navigator.language || navigator.userLanguage];
+        
+        for (let lang of languages) {
+            const langCode = lang.split('-')[0].toLowerCase();
+            if (this.translations[langCode]) {
+                return langCode;
+            }
+        }
+        return 'en';
+    }
+
+    setLanguage(lang) {
+        if (!this.translations[lang]) {
+            lang = 'en';
+        }
         this.currentLang = lang;
         localStorage.setItem('selectedLanguage', lang);
         document.documentElement.lang = lang;
-
-        // Çevirileri uygula
-        this.translatePage();
-        this.updateButtons();
+        
+        this.updateContent();
+        this.updateLanguageButtons();
     }
 
-    translatePage() {
-        const elements = document.querySelectorAll('[data-lang]');
-        elements.forEach(element => {
+    updateContent() {
+        document.querySelectorAll('[data-lang]').forEach(element => {
             const key = element.getAttribute('data-lang');
             const translation = this.translations[this.currentLang][key];
-
+            
             if (translation) {
                 if (element.tagName === 'INPUT' && element.type === 'submit') {
                     element.value = translation;
@@ -97,9 +57,46 @@ class LanguageManager {
         });
     }
 
-    updateButtons() {
-        const buttons = document.querySelectorAll('.language-button');
-        buttons.forEach(button => {
+    setupLanguageButtons() {
+        const container = document.querySelector('.language-selector');
+        if (!container) return;
+        
+        container.innerHTML = '';
+        
+        const languages = {
+            'en': 'EN',
+            'tr': 'TR',
+            'es': 'ES',
+            'de': 'DE',
+            'fr': 'FR',
+            'it': 'IT',
+            'pt': 'PT',
+            'nl': 'NL',
+            'pl': 'PL'
+        };
+
+        Object.entries(languages).forEach(([lang, display]) => {
+            const button = document.createElement('button');
+            button.type = 'button';
+            button.className = 'language-button';
+            button.textContent = display;
+            
+            if (lang === this.currentLang) {
+                button.classList.add('current-lang');
+            }
+            
+            button.onclick = () => {
+                if (this.translations && this.translations[lang]) {
+                    this.setLanguage(lang);
+                }
+            };
+            
+            container.appendChild(button);
+        });
+    }
+
+    updateLanguageButtons() {
+        document.querySelectorAll('.language-button').forEach(button => {
             button.classList.remove('current-lang');
             if (button.textContent === this.currentLang.toUpperCase()) {
                 button.classList.add('current-lang');
@@ -109,6 +106,6 @@ class LanguageManager {
 }
 
 // Sayfa yüklendiğinde dil yöneticisini başlat
-document.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('load', () => {
     new LanguageManager();
 }); 
