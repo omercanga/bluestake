@@ -224,6 +224,13 @@ footer {
     width: auto;
 }
 
+header .logo {
+    height: 120px !important;
+    width: auto !important;
+    max-height: none !important;
+    max-width: none !important;
+}
+
 /* Mobil cihazlar için responsive tasarım */
 @media (max-width: 768px) {
     .language-selector {
@@ -261,8 +268,8 @@ footer {
         flex-direction: column;
     }
     
-    .logo {
-        height: 100px;
+    header .logo {
+        height: 100px !important;
         margin-bottom: 0.5rem;
     }
 } 
