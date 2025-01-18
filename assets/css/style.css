@@ -1,0 +1,250 @@
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0 0 60px 0;
+    background-color: #0a1929;
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: #0d2137;
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid #1e3a5f;
+}
+
+.validator-info {
+    max-width: 1000px;
+    margin: 0.5rem auto;
+    padding: 1rem;
+    background-color: #0d2137;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+.info-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.info-item {
+    margin: 0;
+    padding: 0.8rem;
+    background-color: #15314b;
+    border-radius: 5px;
+    transition: transform 0.2s;
+}
+
+.address-item {
+    grid-column: 1 / -1;
+}
+
+.info-item:hover {
+    transform: translateY(-2px);
+}
+
+.info-item h3 {
+    color: #64b5f6;
+    margin: 0 0 0.5rem 0;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.info-item p {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.address-box {
+    background-color: #15314b;
+    padding: 0.5rem;
+    border-radius: 5px;
+    font-family: monospace;
+    word-break: break-all;
+    margin: 1rem 0;
+    border: 1px solid #1e3a5f;
+    font-size: 1.2rem;
+    line-height: 1.4;
+    letter-spacing: 0.5px;
+}
+
+.status-active {
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+.benefits-section {
+    background-color: #15314b;
+    padding: 1rem;
+    margin-top: 0.5rem;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.benefits-content {
+    flex: 1;
+}
+
+.benefits-section h2 {
+    color: #64b5f6;
+    margin-bottom: 0.3rem;
+    font-size: 1.5rem;
+}
+
+.benefits-subtitle {
+    color: #90caf9;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.benefits-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.benefits-list li {
+    margin: 0;
+    padding: 0.5rem;
+    position: relative;
+    font-size: 1rem;
+    background-color: rgba(100, 181, 246, 0.1);
+    border-radius: 8px;
+    border: 1px solid rgba(100, 181, 246, 0.2);
+    display: flex;
+    align-items: center;
+}
+
+.benefits-list li:before {
+    content: "✓";
+    color: #4CAF50;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.delegate-button {
+    display: inline-block;
+    background-color: #64b5f6;
+    color: #0a1929;
+    padding: 0.8rem 2.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 3rem;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(100, 181, 246, 0.2);
+}
+
+.delegate-button:hover {
+    background-color: #90caf9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(100, 181, 246, 0.4);
+}
+
+footer {
+    background-color: #0d2137;
+    color: #64b5f6;
+    text-align: center;
+    padding: 0.8rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid #1e3a5f;
+    margin-top: auto;
+}
+
+.language-selector {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 0.3rem;
+    padding: 0.8rem;
+    background-color: rgba(13, 33, 55, 0.95);
+    border-radius: 10px 0 0 10px;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+    z-index: 1000;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.language-button {
+    background-color: #15314b;
+    color: #64b5f6;
+    border: 1px solid #1e3a5f;
+    padding: 0.4rem;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+    min-width: 2.5rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0.1rem;
+}
+
+.language-button:hover {
+    background-color: #1e3a5f;
+    color: #90caf9;
+    transform: translateY(-2px);
+}
+
+.current-lang {
+    background-color: #64b5f6;
+    color: #0a1929;
+    font-weight: bold;
+}
+
+/* Mobil cihazlar için responsive tasarım */
+@media (max-width: 768px) {
+    .language-selector {
+        position: fixed;
+        top: auto;
+        bottom: 60px;
+        right: 50%;
+        transform: translateX(50%);
+        grid-template-columns: repeat(5, auto);
+        border-radius: 10px;
+        max-width: 90%;
+    }
+
+    .benefits-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem;
+    }
+
+    .benefits-list {
+        grid-template-columns: 1fr;
+        margin-bottom: 1.5rem;
+    }
+
+    .benefits-list li {
+        justify-content: center;
+    }
+
+    .delegate-button {
+        margin: 1rem 0 0 0;
+        width: 100%;
+    }
+} 
