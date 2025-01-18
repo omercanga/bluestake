@@ -1,13 +1,18 @@
 class LanguageManager {
     constructor() {
-        this.currentLang = localStorage.getItem('selectedLanguage') || 'en';
-        this.translations = translations;
-        this.init();
+        // Wait for DOM to be ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => this.initialize());
+        } else {
+            this.initialize();
+        }
     }
 
-    init() {
-        this.setLanguage(this.currentLang);
+    initialize() {
+        this.currentLang = localStorage.getItem('selectedLanguage') || 'en';
+        this.translations = window.translations;
         this.setupLanguageButtons();
+        this.setLanguage(this.currentLang);
     }
 
     setLanguage(lang) {
@@ -64,7 +69,6 @@ class LanguageManager {
             
             button.onclick = () => {
                 this.setLanguage(lang);
-                this.updateLanguageButtons();
             };
             
             container.appendChild(button);
@@ -81,5 +85,5 @@ class LanguageManager {
     }
 }
 
-// Sayfa yüklendiğinde dil yöneticisini başlat
-const langManager = new LanguageManager(); 
+// Create instance
+new LanguageManager(); 
