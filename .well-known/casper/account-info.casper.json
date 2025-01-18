@@ -30,7 +30,7 @@
     "email": "hello@bluestake.site",
     "branding": {
       "logo": {
-        "png_256": "https://github.com/omercanga/bluestake/blob/main/assets/bluestake_logo.png",
+        "png_256": "https://raw.githubusercontent.com/omercanga/bluestake/main/assets/bluestake_logo.png",
         "png_1024": "",
         "svg": ""
       }
