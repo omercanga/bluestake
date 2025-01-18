@@ -266,3 +266,78 @@ header img.logo {
         margin-bottom: 0.5rem;
     }
 } 
+
+.content-container {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.about-content,
+.tos-content,
+.privacy-content {
+    background-color: #0d2137;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+.about-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.about-list li {
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    background-color: #15314b;
+    border-radius: 5px;
+    position: relative;
+    padding-left: 2rem;
+}
+
+.about-list li:before {
+    content: "✓";
+    color: #4CAF50;
+    position: absolute;
+    left: 0.7rem;
+}
+
+.footer-nav {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.footer-nav a {
+    color: #64b5f6;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-nav a:hover {
+    color: #90caf9;
+}
+
+section {
+    margin: 2rem 0;
+}
+
+section h3 {
+    color: #64b5f6;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+    .footer-nav {
+        gap: 1rem;
+        padding: 0 1rem;
+    }
+    
+    .content-container {
+        margin: 1rem auto;
+    }
+} 
