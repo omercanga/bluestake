@@ -1,444 +1,118 @@
-const translations = {
-    'en': {
-        title: 'Blue Stake Casper Validator',
-        validatorAddress: 'Validator Address',
-        validatorStatus: 'Validator Status',
-        active: 'Active',
-        commission: 'Commission',
-        performance: 'Performance',
-        totalStaked: 'Total Staked',
-        delegateYourCSPR: 'Delegate Your CSPR',
-        performanceRate: '99.8% Performance Rate',
-        commissionRate: '0% Commission Rate',
-        infrastructure: 'Professional Infrastructure',
-        monitoring: '24/7 Monitoring & Support',
-        delegateNow: 'Delegate Now',
-        copyright: '© 2024 Casper Validator. All rights reserved.',
-        joinValidator: 'Join our validator node with these benefits:'
-    },
-    'tr': {
-        title: 'Blue Stake Casper Validator',
-        validatorAddress: 'Validator Adresi',
-        validatorStatus: 'Validator Durumu',
-        active: 'Aktif',
-        commission: 'Komisyon',
-        performance: 'Performans',
-        totalStaked: 'Toplam Stake',
-        delegateYourCSPR: "CSPR'nizi Delegate Edin",
-        performanceRate: '%99.8 Performans Oranı',
-        commissionRate: '%0 Komisyon Oranı',
-        infrastructure: 'Profesyonel Altyapı',
-        monitoring: '7/24 İzleme ve Destek',
-        delegateNow: 'Delegate Et',
-        copyright: '© 2024 Casper Validator. Tüm hakları saklıdır.',
-        joinValidator: 'Validator düğümümüze katılın ve bu avantajlardan yararlanın:'
-    },
-    'es': {
-        title: 'Blue Stake Casper Validator',
-        validatorAddress: 'Dirección del Validador',
-        validatorStatus: 'Estado del Validador',
-        active: 'Activo',
-        commission: 'Comisión',
-        performance: 'Rendimiento',
-        totalStaked: 'Total en Stake',
-        delegateYourCSPR: 'Delega tus CSPR',
-        performanceRate: 'Tasa de Rendimiento 99.8%',
-        commissionRate: 'Tasa de Comisión 0%',
-        infrastructure: 'Infraestructura Profesional',
-        monitoring: 'Monitoreo 24/7 y Soporte',
-        delegateNow: 'Delegar Ahora',
-        copyright: '© 2024 Casper Validator. Todos los derechos reservados.',
-        joinValidator: 'Únase a nuestro nodo validador con estos beneficios:'
-    },
-    'de': {
-        title: 'Blue Stake Casper Validator',
-        validatorAddress: 'Validator-Adresse',
-        validatorStatus: 'Validator-Status',
-        active: 'Aktiv',
-        commission: 'Provision',
-        performance: 'Leistung',
-        totalStaked: 'Gesamt Gestaked',
-        delegateYourCSPR: 'Delegieren Sie Ihre CSPR',
-        performanceRate: '99.8% Leistungsrate',
-        commissionRate: '0% Provisionsrate',
-        infrastructure: 'Professionelle Infrastruktur',
-        monitoring: '24/7 Überwachung und Support',
-        delegateNow: 'Jetzt Delegieren',
-        copyright: '© 2024 Casper Validator. Alle Rechte vorbehalten.',
-        joinValidator: 'Treten Sie unserem Validator-Node mit diesen Vorteilen bei:'
-    },
-    'fr': {
-        title: 'Blue Stake Casper Validator',
-        validatorAddress: 'Adresse du Validateur',
-        validatorStatus: 'Statut du Validateur',
-        active: 'Actif',
-        commission: 'Commission',
-        performance: 'Performance',
-        totalStaked: 'Total Staké',
-        delegateYourCSPR: 'Déléguez vos CSPR',
-        performanceRate: 'Taux de Performance 99.8%',
-        commissionRate: 'Taux de Commission 0%',
-        infrastructure: 'Infrastructure Professionnelle',
-        monitoring: 'Surveillance et Support 24/7',
-        delegateNow: 'Déléguer Maintenant',
-        copyright: '© 2024 Casper Validator. Tous droits réservés.',
-        joinValidator: 'Rejoignez notre nœud validateur avec ces avantages :'
-    },
-    'it': {
-        title: 'Blue Stake Casper Validator',
-        validatorAddress: 'Indirizzo del Validatore',
-        validatorStatus: 'Stato del Validatore',
-        active: 'Attivo',
-        commission: 'Commissione',
-        performance: 'Prestazione',
-        totalStaked: 'Totale in Stake',
-        delegateYourCSPR: 'Delega i tuoi CSPR',
-        performanceRate: 'Tasso di Prestazione 99.8%',
-        commissionRate: 'Tasso di Commissione 0%',
-        infrastructure: 'Infrastruttura Professionale',
-        monitoring: 'Monitoraggio e Supporto 24/7',
-        delegateNow: 'Delega Ora',
-        copyright: '© 2024 Casper Validator. Tutti i diritti riservati.',
-        joinValidator: 'Unisciti al nostro nodo validatore con questi vantaggi:'
-    },
-    'pt': {
-        title: 'Blue Stake Casper Validator',
-        validatorAddress: 'Endereço do Validador',
-        validatorStatus: 'Status do Validador',
-        active: 'Ativo',
-        commission: 'Comissão',
-        performance: 'Desempenho',
-        totalStaked: 'Total em Stake',
-        delegateYourCSPR: 'Delegue seus CSPR',
-        performanceRate: 'Taxa de Desempenho 99.8%',
-        commissionRate: 'Taxa de Comissão 0%',
-        infrastructure: 'Infraestrutura Profissional',
-        monitoring: 'Monitoramento e Suporte 24/7',
-        delegateNow: 'Delegar Agora',
-        copyright: '© 2024 Casper Validator. Todos os direitos reservados.',
-        joinValidator: 'Junte-se ao nosso nó validador com estes benefícios:'
-    },
-    'nl': {
-        title: 'Blue Stake Casper Validator',
-        validatorAddress: 'Validator Adres',
-        validatorStatus: 'Validator Status',
-        active: 'Actief',
-        commission: 'Commissie',
-        performance: 'Prestatie',
-        totalStaked: 'Totaal Gestaked',
-        delegateYourCSPR: 'Delegeer uw CSPR',
-        performanceRate: '99.8% Prestatiesnelheid',
-        commissionRate: '0% Commissie',
-        infrastructure: 'Professionele Infrastructuur',
-        monitoring: '24/7 Monitoring en Ondersteuning',
-        delegateNow: 'Nu Delegeren',
-        copyright: '© 2024 Casper Validator. Alle rechten voorbehouden.',
-        joinValidator: 'Word lid van onze validator node met deze voordelen:'
-    },
-    'pl': {
-        title: 'Blue Stake Casper Validator',
-        validatorAddress: 'Adres Walidatora',
-        validatorStatus: 'Status Walidatora',
-        active: 'Aktywny',
-        commission: 'Prowizja',
-        performance: 'Wydajność',
-        totalStaked: 'Łącznie Zestakowano',
-        delegateYourCSPR: 'Deleguj swoje CSPR',
-        performanceRate: 'Wskaźnik Wydajności 99.8%',
-        commissionRate: 'Wskaźnik Prowizji 0%',
-        infrastructure: 'Profesjonalna Infrastruktura',
-        monitoring: 'Monitoring i Wsparcie 24/7',
-        delegateNow: 'Deleguj Teraz',
-        copyright: '© 2024 Casper Validator. Wszelkie prawa zastrzeżone.',
-        joinValidator: 'Dołącz do naszego węzła walidatora z tymi korzyściami:'
-    },
-    'ru': {
-        title: 'Blue Stake Casper Validator',
-        validatorAddress: 'Адрес Валидатора',
-        validatorStatus: 'Статус Валидатора',
-        active: 'Активный',
-        commission: 'Комиссия',
-        performance: 'Производительность',
-        totalStaked: 'Всего Застейкано',
-        delegateYourCSPR: 'Делегируйте ваши CSPR',
-        performanceRate: 'Производительность 99.8%',
-        commissionRate: 'Комиссия 0%',
-        infrastructure: 'Профессиональная Инфраструктура',
-        monitoring: 'Мониторинг и Поддержка 24/7',
-        delegateNow: 'Делегировать',
-        copyright: '© 2024 Casper Validator. Все права защищены.',
-        joinValidator: 'Присоединяйтесь к нашему узлу валидатора с этими преимуществами:'
-    },
-    'ja': {
-        title: 'Blue Stake Casperバリデーター',
-        validatorAddress: 'バリデーターアドレス',
-        validatorStatus: 'バリデーターステータス',
-        active: 'アクティブ',
-        commission: '手数料',
-        performance: 'パフォーマンス',
-        totalStaked: '総ステーク量',
-        delegateYourCSPR: 'CSPRを委任する',
-        performanceRate: 'パフォーマンス率 99.8%',
-        commissionRate: '手数料率 0%',
-        infrastructure: 'プロフェッショナルなインフラ',
-        monitoring: '24時間体制の監視とサポート',
-        delegateNow: '今すぐ委任',
-        copyright: '© 2024 Casperバリデーター. 全著作権所有.',
-        joinValidator: '以下の特典で私たちのバリデーターノードに参加：'
-    },
-    'zh': {
-        title: 'Blue Stake Casper验证者',
-        validatorAddress: '验证者地址',
-        validatorStatus: '验证者状态',
-        active: '活跃',
-        commission: '佣金',
-        performance: '性能',
-        totalStaked: '总质押量',
-        delegateYourCSPR: '委托您的CSPR',
-        performanceRate: '99.8% 性能率',
-        commissionRate: '0% 佣金率',
-        infrastructure: '专业基础设施',
-        monitoring: '24/7 监控和支持',
-        delegateNow: '立即委托',
-        copyright: '© 2024 Casper验证者. 保留所有权利.',
-        joinValidator: '加入我们的验证节点，享受以下优势：'
-    },
-    'ko': {
-        title: 'Blue Stake Casper 검증자',
-        validatorAddress: '검증자 주소',
-        validatorStatus: '검증자 상태',
-        active: '활성',
-        commission: '수수료',
-        performance: '성능',
-        totalStaked: '총 스테이킹',
-        delegateYourCSPR: 'CSPR 위임하기',
-        performanceRate: '성능 비율 99.8%',
-        commissionRate: '수수료 비율 0%',
-        infrastructure: '전문 인프라',
-        monitoring: '24/7 모니터링 및 지원',
-        delegateNow: '지금 위임하기',
-        copyright: '© 2024 Casper 검증자. 모든 권리 보유.',
-        joinValidator: '다음과 같은 혜택으로 우리의 검증자 노드에 참여하세요:'
-    },
-    'ar': {
-        title: 'Blue Stake Casper مدقق',
-        validatorAddress: 'عنوان المدقق',
-        validatorStatus: 'حالة المدقق',
-        active: 'نشط',
-        commission: 'العمولة',
-        performance: 'الأداء',
-        totalStaked: 'إجمالي المستثمر',
-        delegateYourCSPR: 'فوض CSPR الخاص بك',
-        performanceRate: 'معدل الأداء 99.8%',
-        commissionRate: 'معدل العمولة 0%',
-        infrastructure: 'البنية التحتية المهنية',
-        monitoring: 'مراقبة ودعم على مدار الساعة',
-        delegateNow: 'فوض الآن',
-        copyright: '© 2024 Casper مدقق. جميع الحقوق محفوظة.',
-        joinValidator: 'انضم إلى عقدة المدقق لدينا مع هذه المزايا:'
-    },
-    'hi': {
-        title: 'Blue Stake Casper वैलिडेटर',
-        validatorAddress: 'वैलिडेटर पता',
-        validatorStatus: 'वैलिडेटर स्थिति',
-        active: 'सक्रिय',
-        commission: 'कमीशन',
-        performance: 'प्रदर्शन',
-        totalStaked: 'कुल स्टेक',
-        delegateYourCSPR: 'अपना CSPR डेलीगेट करें',
-        performanceRate: '99.8% प्रदर्शन दर',
-        commissionRate: '0% कमीशन दर',
-        infrastructure: 'पेशेवर बुनियादी ढांचा',
-        monitoring: '24/7 निगरानी और समर्थन',
-        delegateNow: 'अभी डेलीगेट करें',
-        copyright: '© 2024 Casper वैलिडेटर. सर्वाधिकार सुरक्षित.',
-        joinValidator: 'इन लाभों के साथ हमारे वैलिडेटर नोड से जुड़ें:'
-    },
-    'vi': {
-        title: 'Blue Stake Casper Validator',
-        validatorAddress: 'Địa Chỉ Validator',
-        validatorStatus: 'Trạng Thái Validator',
-        active: 'Hoạt Động',
-        commission: 'Hoa Hồng',
-        performance: 'Hiệu Suất',
-        totalStaked: 'Tổng Đã Stake',
-        delegateYourCSPR: 'Ủy Thác CSPR Của Bạn',
-        performanceRate: 'Tỷ Lệ Hiệu Suất 99.8%',
-        commissionRate: 'Tỷ Lệ Hoa Hồng 0%',
-        infrastructure: 'Cơ Sở Hạ Tầng Chuyên Nghiệp',
-        monitoring: 'Giám Sát và Hỗ Trợ 24/7',
-        delegateNow: 'Ủy Thác Ngay',
-        copyright: '© 2024 Casper Validator. Đã đăng ký bản quyền.',
-        joinValidator: 'Tham gia node validator của chúng tôi với những lợi ích sau:'
-    },
-    'th': {
-        title: 'Blue Stake Casper Validator',
-        validatorAddress: 'ที่อยู่ Validator',
-        validatorStatus: 'สถานะ Validator',
-        active: 'ใช้งาน',
-        commission: 'ค่าคอมมิชชั่น',
-        performance: 'ประสิทธิภาพ',
-        totalStaked: 'ยอดรวม Stake',
-        delegateYourCSPR: 'มอบหมาย CSPR ของคุณ',
-        performanceRate: 'อัตราประสิทธิภาพ 99.8%',
-        commissionRate: 'อัตราค่าคอมมิชชั่น 0%',
-        infrastructure: 'โครงสร้างพื้นฐานระดับมืออาชีพ',
-        monitoring: 'การตรวจสอบและสนับสนุน 24/7',
-        delegateNow: 'มอบหมายเลย',
-        copyright: '© 2024 Casper Validator. สงวนลิขสิทธิ์.',
-        joinValidator: 'เข้าร่วม validator node ของเรากับสิทธิประโยชน์เหล่านี้:'
-    },
-    'id': {
-        title: 'Blue Stake Casper Validator',
-        validatorAddress: 'Alamat Validator',
-        validatorStatus: 'Status Validator',
-        active: 'Aktif',
-        commission: 'Komisi',
-        performance: 'Performa',
-        totalStaked: 'Total Staked',
-        delegateYourCSPR: 'Delegasikan CSPR Anda',
-        performanceRate: 'Tingkat Performa 99.8%',
-        commissionRate: 'Tingkat Komisi 0%',
-        infrastructure: 'Infrastruktur Profesional',
-        monitoring: 'Pemantauan dan Dukungan 24/7',
-        delegateNow: 'Delegasikan Sekarang',
-        copyright: '© 2024 Casper Validator. Hak cipta dilindungi.',
-        joinValidator: 'Bergabunglah dengan node validator kami dengan manfaat berikut:'
-    },
-    'uk': {
-        title: 'Blue Stake Casper Validator',
-        validatorAddress: 'Адреса Валідатора',
-        validatorStatus: 'Статус Валідатора',
-        active: 'Активний',
-        commission: 'Комісія',
-        performance: 'Продуктивність',
-        totalStaked: 'Всього Застейкано',
-        delegateYourCSPR: 'Делегуйте ваші CSPR',
-        performanceRate: 'Рівень Продуктивності 99.8%',
-        commissionRate: 'Рівень Комісії 0%',
-        infrastructure: 'Професійна Інфраструктура',
-        monitoring: 'Моніторинг та Підтримка 24/7',
-        delegateNow: 'Делегувати Зараз',
-        copyright: '© 2024 Casper Validator. Всі права захищені.',
-        joinValidator: 'Приєднуйтесь до нашого вузла валідатора з цими перевагами:'
-    },
-    'ro': {
-        title: 'Blue Stake Casper Validator',
-        validatorAddress: 'Adresă Validator',
-        validatorStatus: 'Stare Validator',
-        active: 'Activ',
-        commission: 'Comision',
-        performance: 'Performanță',
-        totalStaked: 'Total Mizat',
-        delegateYourCSPR: 'Delegați CSPR-ul Dvs.',
-        performanceRate: 'Rată de Performanță 99.8%',
-        commissionRate: 'Rată Comision 0%',
-        infrastructure: 'Infrastructură Profesională',
-        monitoring: 'Monitorizare și Suport 24/7',
-        delegateNow: 'Delegați Acum',
-        copyright: '© 2024 Casper Validator. Toate drepturile rezervate.',
-        joinValidator: 'Alăturați-vă nodului nostru validator cu aceste beneficii:'
-    },
-    'bg': {
-        title: 'Blue Stake Casper Validator',
-        validatorAddress: 'Адрес на Валидатора',
-        validatorStatus: 'Статус на Валидатора',
-        active: 'Активен',
-        commission: 'Комисиона',
-        performance: 'Производителност',
-        totalStaked: 'Общо Заложено',
-        delegateYourCSPR: 'Делегирайте вашите CSPR',
-        performanceRate: '99.8% Ниво на производителност',
-        commissionRate: '0% Комисиона',
-        infrastructure: 'Професионална Инфраструктура',
-        monitoring: '24/7 Наблюдение и Поддръжка',
-        delegateNow: 'Делегирайте Сега',
-        copyright: '© 2024 Casper Validator. Всички права запазени.',
-        joinValidator: 'Присъединете се към нашия валидаторски възел с тези предимства:'
-    },
-    'cs': {
-        title: 'Blue Stake Casper Validator',
-        validatorAddress: 'Adresa Validátoru',
-        validatorStatus: 'Stav Validátoru',
-        active: 'Aktivní',
-        commission: 'Provize',
-        performance: 'Výkon',
-        totalStaked: 'Celkem Stakováno',
-        delegateYourCSPR: 'Delegujte své CSPR',
-        performanceRate: '99.8% Výkonnostní Poměr',
-        commissionRate: '0% Provize',
-        infrastructure: 'Profesionální Infrastruktura',
-        monitoring: '24/7 Monitoring a Podpora',
-        delegateNow: 'Delegovat Nyní',
-        copyright: '© 2024 Casper Validator. Všechna práva vyhrazena.',
-        joinValidator: 'Připojte se k našemu validátorskému uzlu s těmito výhodami:'
-    },
-    'da': {
-        title: 'Blue Stake Casper Validator',
-        validatorAddress: 'Validator Adresse',
-        validatorStatus: 'Validator Status',
-        active: 'Aktiv',
-        commission: 'Kommission',
-        performance: 'Ydeevne',
-        totalStaked: 'Samlet Indsat',
-        delegateYourCSPR: 'Delegér din CSPR',
-        performanceRate: '99.8% Ydeevne Rate',
-        commissionRate: '0% Kommission',
-        infrastructure: 'Professionel Infrastruktur',
-        monitoring: '24/7 Overvågning og Support',
-        delegateNow: 'Delegér Nu',
-        copyright: '© 2024 Casper Validator. Alle rettigheder forbeholdes.',
-        joinValidator: 'Tilslut dig vores validator node med disse fordele:'
-    },
-    'el': {
-        title: 'Blue Stake Casper Validator',
-        validatorAddress: 'Διεύθυνση Επικυρωτή',
-        validatorStatus: 'Κατάσταση Επικυρωτή',
-        active: 'Ενεργός',
-        commission: 'Προμήθεια',
-        performance: 'Απόδοση',
-        totalStaked: 'Συνολικό Ποσό',
-        delegateYourCSPR: 'Αναθέστε τα CSPR σας',
-        performanceRate: '99.8% Ποσοστό Απόδοσης',
-        commissionRate: '0% Προμήθεια',
-        infrastructure: 'Επαγγελματική Υποδομή',
-        monitoring: '24/7 Παρακολούθηση και Υποστήριξη',
-        delegateNow: 'Ανάθεση Τώρα',
-        copyright: '© 2024 Casper Validator. Με επιφύλαξη παντός δικαιώματος.',
-        joinValidator: 'Συνδεθείτε στον κόμβο επικυρωτή μας με αυτά τα οφέλη:'
-    },
-    'fi': {
-        title: 'Blue Stake Casper Validator',
-        validatorAddress: 'Validaattorin Osoite',
-        validatorStatus: 'Validaattorin Tila',
-        active: 'Aktiivinen',
-        commission: 'Palkkio',
-        performance: 'Suorituskyky',
-        totalStaked: 'Staked Yhteensä',
-        delegateYourCSPR: 'Delegoi CSPR:si',
-        performanceRate: '99.8% Suorituskyky',
-        commissionRate: '0% Palkkio',
-        infrastructure: 'Ammattimainen Infrastruktuuri',
-        monitoring: '24/7 Valvonta ja Tuki',
-        delegateNow: 'Delegoi Nyt',
-        copyright: '© 2024 Casper Validator. Kaikki oikeudet pidätetään.',
-        joinValidator: 'Liity validaattorisolmuumme näillä eduilla:'
-    },
-    'he': {
-        title: 'Blue Stake Casper Validator',
-        validatorAddress: 'כתובת מאמת',
-        validatorStatus: 'סטטוס מאמת',
-        active: 'פעיל',
-        commission: 'עמלה',
-        performance: 'ביצועים',
-        totalStaked: 'סך הכל בסטייק',
-        delegateYourCSPR: 'האצל את ה-CSPR שלך',
-        performanceRate: '99.8% שיעור ביצועים',
-        commissionRate: '0% עמלה',
-        infrastructure: 'תשתית מקצועית',
-        monitoring: 'ניטור ותמיכה 24/7',
-        delegateNow: 'האצל עכשיו',
-        copyright: '© 2024 Casper Validator. כל הזכויות שמורות.',
-        joinValidator: 'הצטרף לנוד המאמת שלנו עם היתרונות הבאים:'
+class LanguageManager {
+    constructor() {
+        this.currentLang = 'en';
+        this.translations = translations;
+        this.init();
     }
-}; 
+
+    init() {
+        document.addEventListener('DOMContentLoaded', () => {
+            const browserLang = this.getBrowserLanguage();
+            this.setLanguage(browserLang);
+            this.setupLanguageButtons();
+        });
+    }
+
+    getBrowserLanguage() {
+        const languages = navigator.languages || [navigator.language || navigator.userLanguage];
+        
+        for (let lang of languages) {
+            const langCode = lang.split('-')[0].toLowerCase();
+            if (this.translations[langCode]) {
+                return langCode;
+            }
+        }
+        return 'en';
+    }
+
+    setLanguage(lang) {
+        if (!this.translations[lang]) {
+            lang = 'en';
+        }
+        this.currentLang = lang;
+        document.documentElement.lang = lang;
+        document.documentElement.dir = ['ar', 'he'].includes(lang) ? 'rtl' : 'ltr';
+        
+        this.updateContent();
+        this.updateLanguageButtons();
+    }
+
+    updateContent() {
+        const t = this.translations[this.currentLang];
+        
+        document.title = t.title;
+        document.querySelector('h1').textContent = t.title;
+
+        document.querySelector('[data-lang="validatorAddress"]').textContent = t.validatorAddress;
+        document.querySelector('[data-lang="validatorStatus"]').textContent = t.validatorStatus;
+        document.querySelector('[data-lang="active"]').textContent = t.active;
+        document.querySelector('[data-lang="commission"]').textContent = t.commission;
+        document.querySelector('[data-lang="performance"]').textContent = t.performance;
+        document.querySelector('[data-lang="totalStaked"]').textContent = t.totalStaked;
+
+        document.querySelector('[data-lang="delegateYourCSPR"]').textContent = t.delegateYourCSPR;
+        document.querySelector('[data-lang="joinValidator"]').textContent = t.joinValidator;
+        document.querySelector('[data-lang="performanceRate"]').textContent = t.performanceRate;
+        document.querySelector('[data-lang="commissionRate"]').textContent = t.commissionRate;
+        document.querySelector('[data-lang="infrastructure"]').textContent = t.infrastructure;
+        document.querySelector('[data-lang="monitoring"]').textContent = t.monitoring;
+        document.querySelector('[data-lang="delegateNow"]').textContent = t.delegateNow;
+
+        document.querySelector('[data-lang="copyright"]').textContent = t.copyright;
+    }
+
+    setupLanguageButtons() {
+        const container = document.querySelector('.language-selector');
+        container.innerHTML = '';
+        
+        const languageDisplayNames = {
+            // Latin script languages
+            'en': 'EN', 'tr': 'TR', 'es': 'ES', 'de': 'DE', 'fr': 'FR',
+            'it': 'IT', 'pt': 'PT', 'nl': 'NL', 'pl': 'PL', 'cs': 'CS',
+            'da': 'DA', 'fi': 'FI', 'ro': 'RO', 'bg': 'BG', 'el': 'EL',
+            'uk': 'UA', 'vi': 'VI', 'id': 'ID',
+            
+            // Non-Latin script languages
+            'ru': 'RU', 'ja': 'JP', 'zh': 'CN', 'ko': 'KR',
+            'ar': 'AR', 'hi': 'HI', 'th': 'TH', 'he': 'HE'
+        };
+
+        // Dilleri iki gruba ayır: Latin alfabesi kullananlar ve diğerleri
+        const latinScriptLangs = Object.entries(languageDisplayNames)
+            .filter(([code]) => !['ru', 'ja', 'zh', 'ko', 'ar', 'hi', 'th', 'he'].includes(code));
+        
+        const nonLatinScriptLangs = Object.entries(languageDisplayNames)
+            .filter(([code]) => ['ru', 'ja', 'zh', 'ko', 'ar', 'hi', 'th', 'he'].includes(code));
+
+        // Önce Latin alfabesi kullanan dilleri ekle
+        latinScriptLangs.forEach(([lang, display]) => {
+            this.createLanguageButton(container, lang, display);
+        });
+
+        // Sonra diğer dilleri ekle
+        nonLatinScriptLangs.forEach(([lang, display]) => {
+            this.createLanguageButton(container, lang, display);
+        });
+    }
+
+    createLanguageButton(container, lang, display) {
+        const button = document.createElement('button');
+        button.className = 'language-button';
+        button.textContent = display;
+        if (lang === this.currentLang) {
+            button.classList.add('current-lang');
+        }
+        button.onclick = () => this.setLanguage(lang);
+        container.appendChild(button);
+    }
+
+    updateLanguageButtons() {
+        document.querySelectorAll('.language-button').forEach(button => {
+            button.classList.toggle('current-lang', 
+                button.textContent.toLowerCase() === this.currentLang);
+        });
+    }
+}
+
+// Dil yöneticisini başlat
+const langManager = new LanguageManager(); 
