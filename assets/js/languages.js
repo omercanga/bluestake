@@ -1,6 +1,6 @@
 const translations = {
     'en': {
-        title: 'Blue Stake Casper Validator',
+        title: 'BLUESTAKE Casper Validator',
         validatorAddress: 'Validator Address',
         validatorStatus: 'Validator Status',
         active: 'Active',
@@ -13,11 +13,11 @@ const translations = {
         infrastructure: 'Professional Infrastructure',
         monitoring: '24/7 Monitoring & Support',
         delegateNow: 'Delegate Now',
-        copyright: '© 2024 Casper Validator. All rights reserved.',
+        copyright: '© 2024 BLUESTAKE. All rights reserved.',
         joinValidator: 'Join our validator node with these benefits:',
         aboutTitle: "About Blue Stake",
         aboutUs: "About Us",
-        aboutDescription: "Blue Stake is a professional Casper Network validator committed to providing secure and reliable staking services. With our state-of-the-art infrastructure and dedicated team, we ensure maximum uptime and optimal performance for our delegators.",
+        aboutDescription: "BLUESTAKE is a great validator running on a bare metal machine with top hardware specifications. We are committed to providing secure and reliable staking services on the Casper Network.",
         ourMission: "Our Mission",
         missionDescription: "Our mission is to contribute to the decentralization and security of the Casper Network while providing our delegators with a reliable and profitable staking experience.",
         whyChooseUs: "Why Choose Us",
@@ -47,10 +47,11 @@ const translations = {
         privacySection2Title: "2. Data Usage",
         privacySection2Content: "Your data is used solely for providing and improving our validation services.",
         privacySection3Title: "3. Data Protection",
-        privacySection3Content: "We implement security measures to protect your data and privacy."
+        privacySection3Content: "We implement security measures to protect your data and privacy.",
+        github: "GitHub"
     },
     'tr': {
-        title: 'Blue Stake Casper Validator',
+        title: 'BLUESTAKE Casper Validator',
         validatorAddress: 'Validator Adresi',
         validatorStatus: 'Validator Durumu',
         active: 'Aktif',
@@ -63,11 +64,11 @@ const translations = {
         infrastructure: 'Profesyonel Altyapı',
         monitoring: '7/24 İzleme ve Destek',
         delegateNow: 'Delegate Et',
-        copyright: '© 2024 Casper Validator. Tüm hakları saklıdır.',
+        copyright: '© 2024 BLUESTAKE. Tüm hakları saklıdır.',
         joinValidator: 'Validator düğümümüze katılın ve bu avantajlardan yararlanın:',
         aboutTitle: "Blue Stake Hakkında",
         aboutUs: "Hakkımızda",
-        aboutDescription: "Blue Stake, güvenli ve güvenilir staking hizmetleri sunmaya odaklanmış profesyonel bir Casper Network validatörüdür. Modern altyapımız ve uzman ekibimizle, delegatörlerimiz için maksimum çalışma süresi ve optimal performans sağlıyoruz.",
+        aboutDescription: "BLUESTAKE, üst düzey donanım özellikleriyle bare metal makinede çalışan güvenilir bir validatördür. Casper Network üzerinde güvenli ve güvenilir staking hizmetleri sunmaya kendimizi adadık.",
         ourMission: "Misyonumuz",
         missionDescription: "Misyonumuz, delegatörlerimize güvenilir ve kârlı bir staking deneyimi sunarken Casper Network'ün merkeziyetsizliğine ve güvenliğine katkıda bulunmaktır.",
         whyChooseUs: "Neden Biz?",
@@ -97,10 +98,11 @@ const translations = {
         privacySection2Title: "2. Veri Kullanımı",
         privacySection2Content: "Verileriniz yalnızca validasyon hizmetlerimizi sağlamak ve iyileştirmek için kullanılır.",
         privacySection3Title: "3. Veri Koruma",
-        privacySection3Content: "Verilerinizi ve gizliliğinizi korumak için güvenlik önlemleri uyguluyoruz."
+        privacySection3Content: "Verilerinizi ve gizliliğinizi korumak için güvenlik önlemleri uyguluyoruz.",
+        github: "GitHub"
     },
     'es': {
-        title: 'Blue Stake Casper Validator',
+        title: 'BLUESTAKE Casper Validator',
         validatorAddress: 'Dirección del Validador',
         validatorStatus: 'Estado del Validador',
         active: 'Activo',
@@ -113,11 +115,11 @@ const translations = {
         infrastructure: 'Infraestructura Profesional',
         monitoring: 'Monitoreo 24/7 y Soporte',
         delegateNow: 'Delegar Ahora',
-        copyright: '© 2024 Casper Validator. Todos los derechos reservados.',
+        copyright: '© 2024 BLUESTAKE. Todos los derechos reservados.',
         joinValidator: 'Únase a nuestro nodo validador con estos beneficios:',
         aboutTitle: "About Blue Stake",
         aboutUs: "About Us",
-        aboutDescription: "Blue Stake is a professional Casper Network validator committed to providing secure and reliable staking services.",
+        aboutDescription: "BLUESTAKE es un validador que funciona en una máquina bare metal con especificaciones de hardware de alto nivel. Estamos comprometidos a proporcionar servicios de staking seguros y confiables en la red Casper.",
         ourMission: "Our Mission",
         missionDescription: "Our mission is to contribute to the decentralization and security of the Casper Network.",
         whyChooseUs: "Why Choose Us",
@@ -147,10 +149,11 @@ const translations = {
         privacySection2Title: "2. Data Usage",
         privacySection2Content: "Your data is used solely for providing and improving our validation services.",
         privacySection3Title: "3. Data Protection",
-        privacySection3Content: "We implement security measures to protect your data and privacy."
+        privacySection3Content: "We implement security measures to protect your data and privacy.",
+        github: "GitHub"
     },
     'de': {
-        title: 'Blue Stake Casper Validator',
+        title: 'BLUESTAKE Casper Validator',
         validatorAddress: 'Validator-Adresse',
         validatorStatus: 'Validator-Status',
         active: 'Aktiv',
@@ -163,11 +166,11 @@ const translations = {
         infrastructure: 'Professionelle Infrastruktur',
         monitoring: '24/7 Überwachung und Support',
         delegateNow: 'Jetzt Delegieren',
-        copyright: '© 2024 Casper Validator. Alle Rechte vorbehalten.',
+        copyright: '© 2024 BLUESTAKE. Alle Rechte vorbehalten.',
         joinValidator: 'Treten Sie unserem Validator-Node mit diesen Vorteilen bei:',
         aboutTitle: "About Blue Stake",
         aboutUs: "About Us",
-        aboutDescription: "Blue Stake is a professional Casper Network validator committed to providing secure and reliable staking services.",
+        aboutDescription: "BLUESTAKE ist ein großartiger Validator, der auf einer Bare-Metal-Maschine mit Top-Hardware-Spezifikationen läuft. Wir sind bestrebt, sichere und zuverlässige Staking-Dienste im Casper-Netzwerk anzubieten.",
         ourMission: "Our Mission",
         missionDescription: "Our mission is to contribute to the decentralization and security of the Casper Network.",
         whyChooseUs: "Why Choose Us",
@@ -197,10 +200,11 @@ const translations = {
         privacySection2Title: "2. Data Usage",
         privacySection2Content: "Your data is used solely for providing and improving our validation services.",
         privacySection3Title: "3. Data Protection",
-        privacySection3Content: "We implement security measures to protect your data and privacy."
+        privacySection3Content: "We implement security measures to protect your data and privacy.",
+        github: "GitHub"
     },
     'fr': {
-        title: 'Blue Stake Casper Validator',
+        title: 'BLUESTAKE Casper Validator',
         validatorAddress: 'Adresse du Validateur',
         validatorStatus: 'Statut du Validateur',
         active: 'Actif',
@@ -213,11 +217,11 @@ const translations = {
         infrastructure: 'Infrastructure Professionnelle',
         monitoring: 'Surveillance et Support 24/7',
         delegateNow: 'Déléguer Maintenant',
-        copyright: '© 2024 Casper Validator. Tous droits réservés.',
+        copyright: '© 2024 BLUESTAKE. Tous droits réservés.',
         joinValidator: 'Rejoignez notre nœud validateur avec ces avantages :',
         aboutTitle: "About Blue Stake",
         aboutUs: "About Us",
-        aboutDescription: "Blue Stake is a professional Casper Network validator committed to providing secure and reliable staking services.",
+        aboutDescription: "BLUESTAKE est un excellent validateur fonctionnant sur une machine bare metal avec des spécifications matérielles haut de gamme. Nous nous engageons à fournir des services de staking sûrs et fiables sur le réseau Casper.",
         ourMission: "Our Mission",
         missionDescription: "Our mission is to contribute to the decentralization and security of the Casper Network.",
         whyChooseUs: "Why Choose Us",
@@ -247,10 +251,11 @@ const translations = {
         privacySection2Title: "2. Data Usage",
         privacySection2Content: "Your data is used solely for providing and improving our validation services.",
         privacySection3Title: "3. Data Protection",
-        privacySection3Content: "We implement security measures to protect your data and privacy."
+        privacySection3Content: "We implement security measures to protect your data and privacy.",
+        github: "GitHub"
     },
     'it': {
-        title: 'Blue Stake Casper Validator',
+        title: 'BLUESTAKE Casper Validator',
         validatorAddress: 'Indirizzo del Validatore',
         validatorStatus: 'Stato del Validatore',
         active: 'Attivo',
@@ -263,11 +268,11 @@ const translations = {
         infrastructure: 'Infrastruttura Professionale',
         monitoring: 'Monitoraggio e Supporto 24/7',
         delegateNow: 'Delega Ora',
-        copyright: '© 2024 Casper Validator. Tutti i diritti riservati.',
+        copyright: '© 2024 BLUESTAKE. Tutti i diritti riservati.',
         joinValidator: 'Unisciti al nostro nodo validatore con questi vantaggi:',
         aboutTitle: "About Blue Stake",
         aboutUs: "About Us",
-        aboutDescription: "Blue Stake is a professional Casper Network validator committed to providing secure and reliable staking services.",
+        aboutDescription: "BLUESTAKE è un ottimo validatore che opera su una macchina bare metal con specifiche hardware di alto livello. Ci impegniamo a fornire servizi di staking sicuri e affidabili sulla rete Casper.",
         ourMission: "Our Mission",
         missionDescription: "Our mission is to contribute to the decentralization and security of the Casper Network.",
         whyChooseUs: "Why Choose Us",
@@ -297,10 +302,11 @@ const translations = {
         privacySection2Title: "2. Data Usage",
         privacySection2Content: "Your data is used solely for providing and improving our validation services.",
         privacySection3Title: "3. Data Protection",
-        privacySection3Content: "We implement security measures to protect your data and privacy."
+        privacySection3Content: "We implement security measures to protect your data and privacy.",
+        github: "GitHub"
     },
     'pt': {
-        title: 'Blue Stake Casper Validator',
+        title: 'BLUESTAKE Casper Validator',
         validatorAddress: 'Endereço do Validador',
         validatorStatus: 'Status do Validador',
         active: 'Ativo',
@@ -313,11 +319,11 @@ const translations = {
         infrastructure: 'Infraestrutura Profissional',
         monitoring: 'Monitoramento e Suporte 24/7',
         delegateNow: 'Delegar Agora',
-        copyright: '© 2024 Casper Validator. Todos os direitos reservados.',
+        copyright: '© 2024 BLUESTAKE. Todos os direitos reservados.',
         joinValidator: 'Junte-se ao nosso nó validador com estes benefícios:',
         aboutTitle: "About Blue Stake",
         aboutUs: "About Us",
-        aboutDescription: "Blue Stake is a professional Casper Network validator committed to providing secure and reliable staking services.",
+        aboutDescription: "BLUESTAKE é um excelente validador executado em uma máquina bare metal com especificações de hardware de alto nível. Estamos comprometidos em fornecer serviços de staking seguros e confiáveis na rede Casper.",
         ourMission: "Our Mission",
         missionDescription: "Our mission is to contribute to the decentralization and security of the Casper Network.",
         whyChooseUs: "Why Choose Us",
@@ -347,10 +353,11 @@ const translations = {
         privacySection2Title: "2. Data Usage",
         privacySection2Content: "Your data is used solely for providing and improving our validation services.",
         privacySection3Title: "3. Data Protection",
-        privacySection3Content: "We implement security measures to protect your data and privacy."
+        privacySection3Content: "We implement security measures to protect your data and privacy.",
+        github: "GitHub"
     },
     'nl': {
-        title: 'Blue Stake Casper Validator',
+        title: 'BLUESTAKE Casper Validator',
         validatorAddress: 'Validator Adres',
         validatorStatus: 'Validator Status',
         active: 'Actief',
@@ -363,11 +370,11 @@ const translations = {
         infrastructure: 'Professionele Infrastructuur',
         monitoring: '24/7 Monitoring en Ondersteuning',
         delegateNow: 'Nu Delegeren',
-        copyright: '© 2024 Casper Validator. Alle rechten voorbehouden.',
+        copyright: '© 2024 BLUESTAKE. Alle rechten voorbehouden.',
         joinValidator: 'Word lid van onze validator node met deze voordelen:',
         aboutTitle: "About Blue Stake",
         aboutUs: "About Us",
-        aboutDescription: "Blue Stake is a professional Casper Network validator committed to providing secure and reliable staking services.",
+        aboutDescription: "BLUESTAKE is een uitstekende validator die draait op een bare metal machine met top hardware specificaties. We zijn toegewijd aan het leveren van veilige en betrouwbare staking diensten op het Casper Network.",
         ourMission: "Our Mission",
         missionDescription: "Our mission is to contribute to the decentralization and security of the Casper Network.",
         whyChooseUs: "Why Choose Us",
@@ -397,10 +404,11 @@ const translations = {
         privacySection2Title: "2. Data Usage",
         privacySection2Content: "Your data is used solely for providing and improving our validation services.",
         privacySection3Title: "3. Data Protection",
-        privacySection3Content: "We implement security measures to protect your data and privacy."
+        privacySection3Content: "We implement security measures to protect your data and privacy.",
+        github: "GitHub"
     },
     'pl': {
-        title: 'Blue Stake Casper Validator',
+        title: 'BLUESTAKE Casper Validator',
         validatorAddress: 'Adres Walidatora',
         validatorStatus: 'Status Walidatora',
         active: 'Aktywny',
@@ -413,11 +421,11 @@ const translations = {
         infrastructure: 'Profesjonalna Infrastruktura',
         monitoring: 'Monitoring i Wsparcie 24/7',
         delegateNow: 'Deleguj Teraz',
-        copyright: '© 2024 Casper Validator. Wszelkie prawa zastrzeżone.',
+        copyright: '© 2024 BLUESTAKE. Wszelkie prawa zastrzeżone.',
         joinValidator: 'Dołącz do naszego węzła walidatora z tymi korzyściami:',
         aboutTitle: "About Blue Stake",
         aboutUs: "About Us",
-        aboutDescription: "Blue Stake is a professional Casper Network validator committed to providing secure and reliable staking services.",
+        aboutDescription: "BLUESTAKE to świetny walidator działający na maszynie bare metal z najlepszymi specyfikacjami sprzętowymi. Jesteśmy zobowiązani do świadczenia bezpiecznych i niezawodnych usług stakingowych w sieci Casper.",
         ourMission: "Our Mission",
         missionDescription: "Our mission is to contribute to the decentralization and security of the Casper Network.",
         whyChooseUs: "Why Choose Us",
@@ -447,7 +455,8 @@ const translations = {
         privacySection2Title: "2. Data Usage",
         privacySection2Content: "Your data is used solely for providing and improving our validation services.",
         privacySection3Title: "3. Data Protection",
-        privacySection3Content: "We implement security measures to protect your data and privacy."
+        privacySection3Content: "We implement security measures to protect your data and privacy.",
+        github: "GitHub"
     },
     'ru': {
         title: 'Blue Stake Casper Validator',
@@ -497,7 +506,8 @@ const translations = {
         privacySection2Title: "2. Data Usage",
         privacySection2Content: "Your data is used solely for providing and improving our validation services.",
         privacySection3Title: "3. Data Protection",
-        privacySection3Content: "We implement security measures to protect your data and privacy."
+        privacySection3Content: "We implement security measures to protect your data and privacy.",
+        github: "GitHub"
     },
     'ja': {
         title: 'Blue Stake Casperバリデーター',
@@ -547,7 +557,8 @@ const translations = {
         privacySection2Title: "2. Data Usage",
         privacySection2Content: "Your data is used solely for providing and improving our validation services.",
         privacySection3Title: "3. Data Protection",
-        privacySection3Content: "We implement security measures to protect your data and privacy."
+        privacySection3Content: "We implement security measures to protect your data and privacy.",
+        github: "GitHub"
     },
     'zh': {
         title: 'Blue Stake Casper验证者',
@@ -597,7 +608,8 @@ const translations = {
         privacySection2Title: "2. Data Usage",
         privacySection2Content: "Your data is used solely for providing and improving our validation services.",
         privacySection3Title: "3. Data Protection",
-        privacySection3Content: "We implement security measures to protect your data and privacy."
+        privacySection3Content: "We implement security measures to protect your data and privacy.",
+        github: "GitHub"
     },
     'ko': {
         title: 'Blue Stake Casper 검증자',
@@ -647,7 +659,8 @@ const translations = {
         privacySection2Title: "2. Data Usage",
         privacySection2Content: "Your data is used solely for providing and improving our validation services.",
         privacySection3Title: "3. Data Protection",
-        privacySection3Content: "We implement security measures to protect your data and privacy."
+        privacySection3Content: "We implement security measures to protect your data and privacy.",
+        github: "GitHub"
     },
     'ar': {
         title: 'Blue Stake Casper مدقق',
@@ -697,7 +710,8 @@ const translations = {
         privacySection2Title: "2. Data Usage",
         privacySection2Content: "Your data is used solely for providing and improving our validation services.",
         privacySection3Title: "3. Data Protection",
-        privacySection3Content: "We implement security measures to protect your data and privacy."
+        privacySection3Content: "We implement security measures to protect your data and privacy.",
+        github: "GitHub"
     },
     'hi': {
         title: 'Blue Stake Casper वैलिडेटर',
@@ -747,7 +761,8 @@ const translations = {
         privacySection2Title: "2. Data Usage",
         privacySection2Content: "Your data is used solely for providing and improving our validation services.",
         privacySection3Title: "3. Data Protection",
-        privacySection3Content: "We implement security measures to protect your data and privacy."
+        privacySection3Content: "We implement security measures to protect your data and privacy.",
+        github: "GitHub"
     },
     'vi': {
         title: 'Blue Stake Casper Validator',
@@ -797,7 +812,8 @@ const translations = {
         privacySection2Title: "2. Data Usage",
         privacySection2Content: "Your data is used solely for providing and improving our validation services.",
         privacySection3Title: "3. Data Protection",
-        privacySection3Content: "We implement security measures to protect your data and privacy."
+        privacySection3Content: "We implement security measures to protect your data and privacy.",
+        github: "GitHub"
     },
     'th': {
         title: 'Blue Stake Casper Validator',
@@ -847,7 +863,8 @@ const translations = {
         privacySection2Title: "2. Data Usage",
         privacySection2Content: "Your data is used solely for providing and improving our validation services.",
         privacySection3Title: "3. Data Protection",
-        privacySection3Content: "We implement security measures to protect your data and privacy."
+        privacySection3Content: "We implement security measures to protect your data and privacy.",
+        github: "GitHub"
     },
     'id': {
         title: 'Blue Stake Casper Validator',
@@ -897,7 +914,8 @@ const translations = {
         privacySection2Title: "2. Data Usage",
         privacySection2Content: "Your data is used solely for providing and improving our validation services.",
         privacySection3Title: "3. Data Protection",
-        privacySection3Content: "We implement security measures to protect your data and privacy."
+        privacySection3Content: "We implement security measures to protect your data and privacy.",
+        github: "GitHub"
     },
     'uk': {
         title: 'Blue Stake Casper Validator',
@@ -947,7 +965,8 @@ const translations = {
         privacySection2Title: "2. Data Usage",
         privacySection2Content: "Your data is used solely for providing and improving our validation services.",
         privacySection3Title: "3. Data Protection",
-        privacySection3Content: "We implement security measures to protect your data and privacy."
+        privacySection3Content: "We implement security measures to protect your data and privacy.",
+        github: "GitHub"
     },
     'ro': {
         title: 'Blue Stake Casper Validator',
@@ -997,7 +1016,8 @@ const translations = {
         privacySection2Title: "2. Data Usage",
         privacySection2Content: "Your data is used solely for providing and improving our validation services.",
         privacySection3Title: "3. Data Protection",
-        privacySection3Content: "We implement security measures to protect your data and privacy."
+        privacySection3Content: "We implement security measures to protect your data and privacy.",
+        github: "GitHub"
     },
     'bg': {
         title: 'Blue Stake Casper Validator',
@@ -1047,7 +1067,8 @@ const translations = {
         privacySection2Title: "2. Data Usage",
         privacySection2Content: "Your data is used solely for providing and improving our validation services.",
         privacySection3Title: "3. Data Protection",
-        privacySection3Content: "We implement security measures to protect your data and privacy."
+        privacySection3Content: "We implement security measures to protect your data and privacy.",
+        github: "GitHub"
     },
     'cs': {
         title: 'Blue Stake Casper Validator',
@@ -1097,7 +1118,8 @@ const translations = {
         privacySection2Title: "2. Data Usage",
         privacySection2Content: "Your data is used solely for providing and improving our validation services.",
         privacySection3Title: "3. Data Protection",
-        privacySection3Content: "We implement security measures to protect your data and privacy."
+        privacySection3Content: "We implement security measures to protect your data and privacy.",
+        github: "GitHub"
     },
     'da': {
         title: 'Blue Stake Casper Validator',
@@ -1147,7 +1169,8 @@ const translations = {
         privacySection2Title: "2. Data Usage",
         privacySection2Content: "Your data is used solely for providing and improving our validation services.",
         privacySection3Title: "3. Data Protection",
-        privacySection3Content: "We implement security measures to protect your data and privacy."
+        privacySection3Content: "We implement security measures to protect your data and privacy.",
+        github: "GitHub"
     },
     'el': {
         title: 'Blue Stake Casper Validator',
@@ -1197,7 +1220,8 @@ const translations = {
         privacySection2Title: "2. Data Usage",
         privacySection2Content: "Your data is used solely for providing and improving our validation services.",
         privacySection3Title: "3. Data Protection",
-        privacySection3Content: "We implement security measures to protect your data and privacy."
+        privacySection3Content: "We implement security measures to protect your data and privacy.",
+        github: "GitHub"
     },
     'fi': {
         title: 'Blue Stake Casper Validator',
@@ -1247,7 +1271,8 @@ const translations = {
         privacySection2Title: "2. Data Usage",
         privacySection2Content: "Your data is used solely for providing and improving our validation services.",
         privacySection3Title: "3. Data Protection",
-        privacySection3Content: "We implement security measures to protect your data and privacy."
+        privacySection3Content: "We implement security measures to protect your data and privacy.",
+        github: "GitHub"
     },
     'he': {
         title: 'Blue Stake Casper Validator',
@@ -1297,6 +1322,7 @@ const translations = {
         privacySection2Title: "2. Data Usage",
         privacySection2Content: "Your data is used solely for providing and improving our validation services.",
         privacySection3Title: "3. Data Protection",
-        privacySection3Content: "We implement security measures to protect your data and privacy."
+        privacySection3Content: "We implement security measures to protect your data and privacy.",
+        github: "GitHub"
     }
 }; 

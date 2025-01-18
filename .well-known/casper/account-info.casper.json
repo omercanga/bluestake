@@ -1,0 +1,71 @@
+{
+  "owner": {
+    "name": "BLUESTAKE",
+    "description": "BLUESTAKE is a great validator",
+    "type": [
+      "validator"
+    ],
+    "identity": {
+      "ownership_disclosure_url": "",
+      "casper_association_kyc_url": "",
+      "casper_association_kyc_onchain": ""
+    },
+    "resources": {
+      "code_of_conduct_url": "",
+      "terms_of_service_url": "https://bluestake.site/tos",
+      "privacy_policy_url": "https://bluestake.site/privacy",
+      "other": [
+        {
+          "name": "About Us",
+          "url": "https://bluestake.site/about"
+        }
+      ]
+    },
+    "affiliated_accounts": [
+      {
+        "public_key": "01aea816a1db5886755c6d0c29ce4f6c54c5364e97b13fee60e7c99e7cecbcf6a8"
+      }
+    ],
+    "website": "https://bluestake.site",
+    "email": "hello@bluestake.site",
+    "branding": {
+      "logo": {
+        "png_256": "https://github.com/omercanga/bluestake/blob/main/assets/bluestake_logo.png",
+        "png_1024": "",
+        "svg": ""
+      }
+    },
+    "location": {
+      "name": "TURKİYE",
+      "country": "TR",
+      "latitude": 0,
+      "longitude": 0
+    },
+    "social": {
+      "keybase": "",
+      "telegram": "",
+      "twitter": "",
+      "github": "https://github.com/omercanga/bluestake",
+      "youtube": "",
+      "facebook": "",
+      "medium": "",
+      "reddit": "",
+      "wechat": ""
+    }
+  },
+  "nodes": [
+    {
+      "public_key": "01aea816a1db5886755c6d0c29ce4f6c54c5364e97b13fee60e7c99e7cecbcf6a8",
+      "description": "This validator is running on a bare metal machine with top hardware specifications",
+      "location": {
+        "name": "TURKİYE",
+        "country": "TR",
+        "latitude": 0,
+        "longitude": 0
+      },
+      "functionality": [
+        "validator"
+      ]
+    }
+  ]
+}
