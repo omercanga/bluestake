@@ -199,11 +199,21 @@ footer {
     align-items: center;
     justify-content: space-between;
     gap: 8px;
+    transition: background 0.2s;
+}
+
+.language-current:hover {
+    background: rgba(13, 33, 55, 1);
 }
 
 .language-current:after {
     content: '▼';
     font-size: 10px;
+    transition: transform 0.2s;
+}
+
+.language-dropdown.active .language-current:after {
+    transform: rotate(180deg);
 }
 
 .language-list {
@@ -218,10 +228,11 @@ footer {
     overflow: hidden;
     transition: max-height 0.3s ease;
     width: 200px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .language-dropdown.active .language-list {
-    max-height: 400px;
+    max-height: 300px;
     overflow-y: auto;
 }
 
@@ -230,7 +241,7 @@ footer {
     cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 8px;
+    justify-content: space-between;
     color: #64b5f6;
     transition: background 0.2s;
 }
@@ -242,6 +253,7 @@ footer {
 .language-option.current {
     background: #64b5f6;
     color: #0d2137;
+    font-weight: 500;
 }
 
 .language-flag {
@@ -252,7 +264,7 @@ footer {
 
 /* Scrollbar stilleri */
 .language-list::-webkit-scrollbar {
-    width: 6px;
+    width: 4px;
 }
 
 .language-list::-webkit-scrollbar-track {
@@ -261,7 +273,7 @@ footer {
 
 .language-list::-webkit-scrollbar-thumb {
     background: #64b5f6;
-    border-radius: 3px;
+    border-radius: 2px;
 }
 
 @media (max-width: 768px) {

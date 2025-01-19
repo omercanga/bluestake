@@ -67,51 +67,43 @@ class LanguageManager {
         const listContainer = document.createElement('div');
         listContainer.className = 'language-list';
 
-        // Dilleri grupla
-        const primaryLanguages = ['en', 'tr', 'es', 'de', 'fr'];
-        const secondaryLanguages = ['it', 'pt', 'nl', 'pl', 'ru'];
-        const otherLanguages = ['ja', 'zh', 'ko', 'ar', 'hi', 'th', 'vi', 'id', 'cs', 'el', 'he', 'da', 'fi', 'ro', 'bg', 'uk'];
-
-        const allLanguages = [
-            ...primaryLanguages.map(code => ({ code, primary: true })),
-            ...secondaryLanguages.map(code => ({ code, primary: false })),
-            ...otherLanguages.map(code => ({ code, primary: false }))
-        ];
+        // Dilleri grupla ve sırala
+        const languages = Object.keys(this.translations).map(code => ({
+            code,
+            name: this.getLanguageName(code)
+        })).sort((a, b) => a.name.localeCompare(b.name));
 
         // Dil seçeneklerini oluştur
-        allLanguages.forEach(({ code }) => {
-            if (this.translations[code]) {
-                const option = document.createElement('div');
-                option.className = 'language-option';
-                if (code === this.currentLang) {
-                    option.classList.add('current');
-                }
-                
-                option.innerHTML = `
-                    <span>${code.toUpperCase()}</span>
-                    <span>${this.getLanguageName(code)}</span>
-                `;
-
-                option.onclick = (e) => {
-                    e.stopPropagation();
-                    this.applyLanguage(code);
-                    dropdown.classList.remove('active');
-                };
-
-                listContainer.appendChild(option);
+        languages.forEach(({ code, name }) => {
+            const option = document.createElement('div');
+            option.className = 'language-option';
+            if (code === this.currentLang) {
+                option.classList.add('current');
             }
+            
+            option.innerHTML = `
+                <span>${name}</span>
+                <span>${code.toUpperCase()}</span>
+            `;
+
+            option.onclick = (e) => {
+                e.stopPropagation();
+                this.applyLanguage(code);
+                dropdown.classList.remove('active');
+            };
+
+            listContainer.appendChild(option);
         });
 
         // Click olaylarını ekle
-        currentBtn.onclick = () => {
+        currentBtn.onclick = (e) => {
+            e.stopPropagation();
             dropdown.classList.toggle('active');
         };
 
         // Dışarı tıklandığında menüyü kapat
-        document.addEventListener('click', (e) => {
-            if (!dropdown.contains(e.target)) {
-                dropdown.classList.remove('active');
-            }
+        document.addEventListener('click', () => {
+            dropdown.classList.remove('active');
         });
 
         // Elementleri birleştir
