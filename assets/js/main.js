@@ -51,6 +51,8 @@ class LanguageManager {
 
     setupLanguageButtons(container) {
         container.innerHTML = '';
+        const availableLanguages = Object.keys(this.translations);
+        console.log('Available translations:', availableLanguages);
 
         // Dilleri grupla
         const primaryLanguages = ['en', 'tr', 'es', 'de', 'fr'];
@@ -66,9 +68,8 @@ class LanguageManager {
         const mainContainer = document.createElement('div');
         mainContainer.className = 'language-groups';
 
-        // Her dil için buton oluştur
+        let buttonsCreated = 0;
         allLanguages.forEach(({ code }) => {
-            // Sadece çevirisi olan diller için buton oluştur
             if (this.translations[code]) {
                 const button = document.createElement('button');
                 button.type = 'button';
@@ -80,12 +81,18 @@ class LanguageManager {
                     button.classList.add('current-lang');
                 }
 
-                button.onclick = () => this.applyLanguage(code);
+                button.onclick = () => {
+                    console.log(`Switching to language: ${code}`);
+                    this.applyLanguage(code);
+                };
+
                 mainContainer.appendChild(button);
+                buttonsCreated++;
             }
         });
 
         container.appendChild(mainContainer);
+        console.log(`Created ${buttonsCreated} language buttons out of ${allLanguages.length} possible languages`);
     }
 
     getLanguageName(code) {
