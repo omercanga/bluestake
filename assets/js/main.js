@@ -51,8 +51,21 @@ class LanguageManager {
 
     setupLanguageButtons(container) {
         container.innerHTML = '';
-        const availableLanguages = Object.keys(this.translations);
-        console.log('Available translations:', availableLanguages);
+        
+        // Dropdown container
+        const dropdown = document.createElement('div');
+        dropdown.className = 'language-dropdown';
+
+        // Current language button
+        const currentBtn = document.createElement('button');
+        currentBtn.className = 'language-current';
+        currentBtn.innerHTML = `
+            <span>${this.currentLang.toUpperCase()}</span>
+        `;
+        
+        // Language list container
+        const listContainer = document.createElement('div');
+        listContainer.className = 'language-list';
 
         // Dilleri grupla
         const primaryLanguages = ['en', 'tr', 'es', 'de', 'fr'];
@@ -65,34 +78,46 @@ class LanguageManager {
             ...otherLanguages.map(code => ({ code, primary: false }))
         ];
 
-        const mainContainer = document.createElement('div');
-        mainContainer.className = 'language-groups';
-
-        let buttonsCreated = 0;
+        // Dil seçeneklerini oluştur
         allLanguages.forEach(({ code }) => {
             if (this.translations[code]) {
-                const button = document.createElement('button');
-                button.type = 'button';
-                button.className = 'language-button';
-                button.textContent = code.toUpperCase();
-                button.title = this.getLanguageName(code);
-
+                const option = document.createElement('div');
+                option.className = 'language-option';
                 if (code === this.currentLang) {
-                    button.classList.add('current-lang');
+                    option.classList.add('current');
                 }
+                
+                option.innerHTML = `
+                    <span>${code.toUpperCase()}</span>
+                    <span>${this.getLanguageName(code)}</span>
+                `;
 
-                button.onclick = () => {
-                    console.log(`Switching to language: ${code}`);
+                option.onclick = (e) => {
+                    e.stopPropagation();
                     this.applyLanguage(code);
+                    dropdown.classList.remove('active');
                 };
 
-                mainContainer.appendChild(button);
-                buttonsCreated++;
+                listContainer.appendChild(option);
             }
         });
 
-        container.appendChild(mainContainer);
-        console.log(`Created ${buttonsCreated} language buttons out of ${allLanguages.length} possible languages`);
+        // Click olaylarını ekle
+        currentBtn.onclick = () => {
+            dropdown.classList.toggle('active');
+        };
+
+        // Dışarı tıklandığında menüyü kapat
+        document.addEventListener('click', (e) => {
+            if (!dropdown.contains(e.target)) {
+                dropdown.classList.remove('active');
+            }
+        });
+
+        // Elementleri birleştir
+        dropdown.appendChild(currentBtn);
+        dropdown.appendChild(listContainer);
+        container.appendChild(dropdown);
     }
 
     getLanguageName(code) {
@@ -175,10 +200,15 @@ class LanguageManager {
     }
 
     updateActiveButton() {
-        document.querySelectorAll('.language-button').forEach(button => {
-            button.classList.remove('current-lang');
-            if (button.textContent === this.currentLang.toUpperCase()) {
-                button.classList.add('current-lang');
+        const currentBtn = document.querySelector('.language-current span');
+        if (currentBtn) {
+            currentBtn.textContent = this.currentLang.toUpperCase();
+        }
+
+        document.querySelectorAll('.language-option').forEach(option => {
+            option.classList.remove('current');
+            if (option.querySelector('span').textContent === this.currentLang.toUpperCase()) {
+                option.classList.add('current');
             }
         });
     }
