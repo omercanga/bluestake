@@ -7,54 +7,80 @@ class LanguageManager {
         }
 
         this.translations = translations;
-        this.currentLang = localStorage.getItem('selectedLanguage') || 'en';
-        this.init();
+        
+        // Önce localStorage'dan, yoksa tarayıcı dilinden, o da yoksa varsayılan olarak 'en'
+        this.currentLang = this.getInitialLanguage();
+        
+        // DOM yüklendiğinde başlat
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => this.init());
+        } else {
+            this.init();
+        }
+    }
+
+    getInitialLanguage() {
+        // Önce localStorage'a bak
+        const savedLang = localStorage.getItem('selectedLanguage');
+        if (savedLang && this.translations[savedLang]) {
+            return savedLang;
+        }
+
+        // Tarayıcı dilini kontrol et
+        const browserLang = navigator.language.split('-')[0];
+        if (this.translations[browserLang]) {
+            return browserLang;
+        }
+
+        // Varsayılan dil
+        return 'en';
     }
 
     init() {
-        console.log('Initializing Language Manager');
-        console.log('Current language:', this.currentLang);
-        console.log('Available translations:', Object.keys(this.translations));
-
+        console.log('Initializing with language:', this.currentLang);
+        
+        // Dil seçici container'ı bul
         const container = document.querySelector('.language-selector');
         if (!container) {
             console.error('Language selector container not found');
             return;
         }
 
-        this.createLanguageButtons(container);
+        // Dil butonlarını oluştur
+        this.setupLanguageButtons(container);
+        
+        // Başlangıç dilini uygula
         this.applyLanguage(this.currentLang);
     }
 
-    createLanguageButtons(container) {
+    setupLanguageButtons(container) {
         container.innerHTML = '';
 
-        // Desteklenen diller
-        const supportedLanguages = [
-            { code: 'en', name: 'English' },
-            { code: 'tr', name: 'Türkçe' },
-            { code: 'es', name: 'Español' },
-            { code: 'de', name: 'Deutsch' },
-            { code: 'fr', name: 'Français' }
+        // Desteklenen diller ve etiketleri
+        const languages = [
+            { code: 'en', label: 'EN', name: 'English' },
+            { code: 'tr', label: 'TR', name: 'Türkçe' },
+            { code: 'es', label: 'ES', name: 'Español' },
+            { code: 'de', label: 'DE', name: 'Deutsch' },
+            { code: 'fr', label: 'FR', name: 'Français' }
         ];
 
-        supportedLanguages.forEach(lang => {
-            // Sadece çevirisi olan dilleri göster
+        languages.forEach(lang => {
             if (this.translations[lang.code]) {
                 const button = document.createElement('button');
                 button.type = 'button';
                 button.className = 'language-button';
-                button.textContent = lang.code.toUpperCase();
+                button.textContent = lang.label;
                 button.title = lang.name;
-
+                
                 if (lang.code === this.currentLang) {
                     button.classList.add('current-lang');
                 }
 
-                button.addEventListener('click', () => {
-                    console.log(`Switching to ${lang.code}`);
+                button.onclick = () => {
+                    console.log(`Changing language to: ${lang.code}`);
                     this.applyLanguage(lang.code);
-                });
+                };
 
                 container.appendChild(button);
             }
@@ -62,30 +88,38 @@ class LanguageManager {
     }
 
     applyLanguage(lang) {
-        // Dil çevirisinin varlığını kontrol et
+        // Dil çevirilerinin varlığını kontrol et
         if (!this.translations[lang]) {
-            console.error(`No translations found for ${lang}, falling back to English`);
-            lang = 'en';
+            console.error(`No translations found for ${lang}`);
+            return;
         }
 
+        // Dili ayarla
         this.currentLang = lang;
         localStorage.setItem('selectedLanguage', lang);
         document.documentElement.lang = lang;
 
-        this.updatePageContent();
-        this.updateLanguageButtons();
+        // Sayfa içeriğini güncelle
+        this.updateContent();
+        
+        // Aktif dil butonunu güncelle
+        this.updateActiveButton();
     }
 
-    updatePageContent() {
-        const translations = this.translations[this.currentLang];
+    updateContent() {
+        const currentTranslations = this.translations[this.currentLang];
         
+        // Tüm çevrilebilir elementleri bul ve güncelle
         document.querySelectorAll('[data-lang]').forEach(element => {
             const key = element.getAttribute('data-lang');
-            const translation = translations[key];
+            const translation = currentTranslations[key];
 
             if (translation) {
+                // Element tipine göre çeviriyi uygula
                 if (element.tagName === 'INPUT' && element.type === 'submit') {
                     element.value = translation;
+                } else if (element.tagName === 'META' && element.getAttribute('name') === 'description') {
+                    element.setAttribute('content', translation);
                 } else {
                     element.textContent = translation;
                 }
@@ -93,9 +127,14 @@ class LanguageManager {
                 console.warn(`Translation missing for key: ${key} in language: ${this.currentLang}`);
             }
         });
+
+        // Sayfa başlığını güncelle
+        if (currentTranslations.title) {
+            document.title = currentTranslations.title;
+        }
     }
 
-    updateLanguageButtons() {
+    updateActiveButton() {
         document.querySelectorAll('.language-button').forEach(button => {
             button.classList.remove('current-lang');
             if (button.textContent === this.currentLang.toUpperCase()) {
@@ -105,8 +144,8 @@ class LanguageManager {
     }
 }
 
-// Sayfa yüklendiğinde başlat
+// Sayfa yüklendiğinde dil yöneticisini başlat
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('DOM loaded, initializing Language Manager');
+    console.log('DOM loaded, starting Language Manager');
     window.langManager = new LanguageManager();
 }); 
