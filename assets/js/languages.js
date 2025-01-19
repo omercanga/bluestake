@@ -20,7 +20,7 @@ const translations = {
         'privacy': 'Privacy Policy',
         'contact': 'Contact',
         'github': 'GitHub',
-        'copyright': '© 2024 BLUESTAKE. All rights reserved.'
+        'copyright': '© 2024 Bluestake All rights reserved.'
     },
     'tr': {
         // Türkçe çeviriler
