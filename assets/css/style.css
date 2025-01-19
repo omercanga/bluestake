@@ -178,15 +178,11 @@ footer {
     top: 10px;
     right: 10px;
     display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
+    gap: 5px;
     padding: 10px;
-    background: rgba(13, 33, 55, 0.98);
+    background: rgba(13, 33, 55, 0.95);
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     z-index: 10000;
-    max-width: 500px;
-    justify-content: flex-end;
 }
 
 .language-button {
@@ -197,20 +193,18 @@ footer {
     border-radius: 4px;
     cursor: pointer;
     font-size: 14px;
-    min-width: 45px;
+    min-width: 40px;
     text-align: center;
-    transition: all 0.2s ease;
+    transition: all 0.2s;
 }
 
 .language-button:hover {
     background: #1e3a5f;
-    transform: translateY(-1px);
 }
 
 .language-button.current-lang {
     background: #64b5f6;
     color: #0d2137;
-    font-weight: 500;
 }
 
 @media (max-width: 768px) {
@@ -219,16 +213,6 @@ footer {
         bottom: 70px;
         right: 50%;
         transform: translateX(50%);
-        max-width: 90%;
-        justify-content: center;
-        padding: 8px;
-        gap: 4px;
-    }
-
-    .language-button {
-        padding: 6px 10px;
-        font-size: 12px;
-        min-width: 40px;
     }
 }
 
