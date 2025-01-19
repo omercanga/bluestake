@@ -56,14 +56,41 @@ class LanguageManager {
     setupLanguageButtons(container) {
         container.innerHTML = '';
 
-        // Desteklenen diller ve etiketleri
+        // Tüm desteklenen diller
         const languages = [
+            // Ana diller
             { code: 'en', label: 'EN', name: 'English' },
             { code: 'tr', label: 'TR', name: 'Türkçe' },
             { code: 'es', label: 'ES', name: 'Español' },
             { code: 'de', label: 'DE', name: 'Deutsch' },
-            { code: 'fr', label: 'FR', name: 'Français' }
+            { code: 'fr', label: 'FR', name: 'Français' },
+            // Diğer diller
+            { code: 'it', label: 'IT', name: 'Italiano' },
+            { code: 'pt', label: 'PT', name: 'Português' },
+            { code: 'nl', label: 'NL', name: 'Nederlands' },
+            { code: 'pl', label: 'PL', name: 'Polski' },
+            { code: 'ru', label: 'RU', name: 'Русский' },
+            { code: 'ja', label: 'JA', name: '日本語' },
+            { code: 'zh', label: 'ZH', name: '中文' },
+            { code: 'ko', label: 'KO', name: '한국어' },
+            { code: 'ar', label: 'AR', name: 'العربية' },
+            { code: 'hi', label: 'HI', name: 'हिंदी' },
+            { code: 'th', label: 'TH', name: 'ไทย' },
+            { code: 'vi', label: 'VI', name: 'Tiếng Việt' },
+            { code: 'id', label: 'ID', name: 'Bahasa Indonesia' },
+            { code: 'cs', label: 'CS', name: 'Čeština' },
+            { code: 'el', label: 'EL', name: 'Ελληνικά' },
+            { code: 'he', label: 'HE', name: 'עברית' },
+            { code: 'da', label: 'DA', name: 'Dansk' },
+            { code: 'fi', label: 'FI', name: 'Suomi' },
+            { code: 'ro', label: 'RO', name: 'Română' },
+            { code: 'bg', label: 'BG', name: 'Български' },
+            { code: 'uk', label: 'UK', name: 'Українська' }
         ];
+
+        // Dil gruplarını oluştur
+        const mainContainer = document.createElement('div');
+        mainContainer.className = 'language-groups';
 
         languages.forEach(lang => {
             if (this.translations[lang.code]) {
@@ -82,9 +109,11 @@ class LanguageManager {
                     this.applyLanguage(lang.code);
                 };
 
-                container.appendChild(button);
+                mainContainer.appendChild(button);
             }
         });
+
+        container.appendChild(mainContainer);
     }
 
     applyLanguage(lang) {
