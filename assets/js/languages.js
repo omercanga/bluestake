@@ -23,7 +23,20 @@ const translations = {
         'copyright': '© 2024 Bluestake All rights reserved.'
     },
     'tr': {
+        'title': 'Blue Stake Casper Validatörü',
         // Türkçe çeviriler
+    },
+    'es': {
+        'title': 'Validador Casper Blue Stake',
+        // ... diğer çeviriler ...
+    },
+    'de': {
+        'title': 'Blue Stake Casper Validator',
+        // ... diğer çeviriler ...
+    },
+    'fr': {
+        'title': 'Validateur Casper Blue Stake',
+        // ... diğer çeviriler ...
     }
     // Diğer diller...
 }; 
