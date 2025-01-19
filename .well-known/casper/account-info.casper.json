@@ -1,7 +1,7 @@
 {
   "owner": {
-    "name": "BLUESTAKE",
-    "description": "BLUESTAKE is a great validator running on a bare metal machine with top hardware specifications",
+    "name": "BlueStake",
+    "description": "BlueStake is a great validator running on a bare metal machine with top hardware specifications",
     "type": [
       "validator"
     ],
