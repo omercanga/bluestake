@@ -55,6 +55,7 @@ class LanguageManager {
 
     setupLanguageButtons(container) {
         container.innerHTML = '';
+        console.log('Available translations:', Object.keys(this.translations));
 
         // Tüm desteklenen diller
         const languages = [
@@ -93,6 +94,10 @@ class LanguageManager {
         mainContainer.className = 'language-groups';
 
         languages.forEach(lang => {
+            console.log(`Checking language: ${lang.code}`, {
+                hasTranslation: !!this.translations[lang.code]
+            });
+            
             if (this.translations[lang.code]) {
                 const button = document.createElement('button');
                 button.type = 'button';
@@ -114,6 +119,7 @@ class LanguageManager {
         });
 
         container.appendChild(mainContainer);
+        console.log('Total buttons created:', mainContainer.children.length);
     }
 
     applyLanguage(lang) {
