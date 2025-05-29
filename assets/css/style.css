@@ -84,6 +84,11 @@ header {
     font-weight: bold;
 }
 
+.status-inactive {
+    color: #f44336;
+    font-weight: bold;
+}
+
 .benefits-section {
     background-color: #15314b;
     padding: 1rem;
