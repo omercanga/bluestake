@@ -20,7 +20,7 @@ const translations = {
         'privacy': 'Privacy Policy',
         'contact': 'Contact',
         'github': 'GitHub',
-        'copyright': '© 2024 Bluestake. All rights reserved.'
+        'copyright': '© Bluestake. All rights reserved.'
     },
     'tr': {
         'title': 'Blue Stake Casper Validatörü',
@@ -32,7 +32,7 @@ const translations = {
         'totalStaked': 'Toplam Stake',
         'delegateYourCSPR': 'CSPR\'nizi Delegate Edin',
         'joinValidator': 'Validatör nodumuza bu avantajlarla katılın:',
-        'performanceRate': '%99.8 Performans Oranı',
+        'performanceRate': '%99.9 Performans Oranı',
         'commissionRate': '%0 Komisyon Oranı',
         'infrastructure': 'Profesyonel Altyapı',
         'monitoring': '7/24 İzleme ve Destek',
@@ -43,7 +43,7 @@ const translations = {
         'privacy': 'Gizlilik Politikası',
         'contact': 'İletişim',
         'github': 'GitHub',
-        'copyright': '© 2024 Bluestake. Tüm hakları saklıdır.'
+        'copyright': '© Bluestake. Tüm hakları saklıdır.'
     },
     'es': {
         'title': 'Validador Casper Blue Stake',
@@ -66,7 +66,7 @@ const translations = {
         'privacy': 'Política de Privacidad',
         'contact': 'Contacto',
         'github': 'GitHub',
-        'copyright': '© 2024 Bluestake. Todos los derechos reservados.'
+        'copyright': '© Bluestake. Todos los derechos reservados.'
     },
     'de': {
         'title': 'Blue Stake Casper Validator',
@@ -89,7 +89,7 @@ const translations = {
         'privacy': 'Datenschutz',
         'contact': 'Kontakt',
         'github': 'GitHub',
-        'copyright': '© 2024 Bluestake. Alle Rechte vorbehalten.'
+        'copyright': '© Bluestake. Alle Rechte vorbehalten.'
     },
     'fr': {
         'title': 'Validateur Casper Blue Stake',
@@ -112,7 +112,7 @@ const translations = {
         'privacy': 'Politique de Confidentialité',
         'contact': 'Contact',
         'github': 'GitHub',
-        'copyright': '© 2024 Bluestake. Tous droits réservés.'
+        'copyright': '© Bluestake. Tous droits réservés.'
     },
     'it': {
         'title': 'Validatore Casper Blue Stake',
@@ -135,7 +135,7 @@ const translations = {
         'privacy': 'Privacy Policy',
         'contact': 'Contatto',
         'github': 'GitHub',
-        'copyright': '© 2024 Bluestake. Tutti i diritti riservati.'
+        'copyright': '© Bluestake. Tutti i diritti riservati.'
     },
     'pt': {
         'title': 'Validador Casper Blue Stake',
@@ -158,7 +158,7 @@ const translations = {
         'privacy': 'Política de Privacidade',
         'contact': 'Contato',
         'github': 'GitHub',
-        'copyright': '© 2024 Bluestake. Todos os direitos reservados.'
+        'copyright': '© Bluestake. Todos os direitos reservados.'
     },
     'nl': {
         'title': 'Blue Stake Casper Validator',
@@ -181,7 +181,7 @@ const translations = {
         'privacy': 'Privacybeleid',
         'contact': 'Contact',
         'github': 'GitHub',
-        'copyright': '© 2024 Bluestake. Alle rechten voorbehouden.'
+        'copyright': '© Bluestake. Alle rechten voorbehouden.'
     },
     'pl': {
         'title': 'Blue Stake Casper Validator',
@@ -204,7 +204,7 @@ const translations = {
         'privacy': 'Polityka Prywatności',
         'contact': 'Kontakt',
         'github': 'GitHub',
-        'copyright': '© 2024 Bluestake. Wszelkie prawa zastrzeżone.'
+        'copyright': '© Bluestake. Wszelkie prawa zastrzeżone.'
     },
     'ru': {
         'title': 'Blue Stake Casper Validator',
@@ -227,6 +227,6 @@ const translations = {
         'privacy': 'Политика Конфиденциальности',
         'contact': 'Контакты',
         'github': 'GitHub',
-        'copyright': '© 2024 Bluestake. Все права защищены.'
+        'copyright': '© Bluestake. Все права защищены.'
     }
 }; 
