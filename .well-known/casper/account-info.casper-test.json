@@ -1,0 +1,27 @@
+{
+  "owner": {
+    "name": "BlueStake",
+    "description": "Professional and secure staking services for the Casper Network.",
+    "website": "https://www.bluestake.site",
+    "identity": {
+      "email": "contact@bluestake.site"
+    },
+    "branding": {
+      "logo_svg": "https://www.bluestake.site/assets/logo.svg",
+      "logo_png_256": "https://www.bluestake.site/assets/logo-256.png"
+    }
+  },
+  "nodes": [
+    {
+      "node_address": "01aea816a1db5886755c6d0c29ce4f6c54c5364e97b13fee60e7c99e7cecbcf6a8",
+      "name": "BlueStake Testnet Node",
+      "function": "validator"
+    }
+  ],
+  "affiliated_accounts": [
+    {
+      "account_hash": "account-hash-c42ee7c830b74701578b65429fe0112ffc88f5dd22c90b069b126f31675226bc",
+      "purpose": "validator"
+    }
+  ]
+}
