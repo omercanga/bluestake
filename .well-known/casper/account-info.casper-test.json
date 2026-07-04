@@ -2,9 +2,7 @@
     "owner": {
         "name": "BlueStake",
         "description": "BlueStake is a great validator running on a bare metal machine with top hardware specifications",
-        "type": [
-            "validator"
-        ],
+        "type": ["validator"],
         "identity": {
             "ownership_disclosure_url": "",
             "casper_association_kyc_url": "",
@@ -15,16 +13,11 @@
             "terms_of_service_url": "https://www.bluestake.site/tos",
             "privacy_policy_url": "https://www.bluestake.site/privacy",
             "other": [
-                {
-                    "name": "About Us",
-                    "url": "https://www.bluestake.site/about"
-                }
+                {"name": "About Us", "url": "https://www.bluestake.site/about"}
             ]
         },
         "affiliated_accounts": [
-            {
-                "public_key": "01aea816a1db5886755c6d0c29ce4f6c54c5364e97b13fee60e7c99e7cecbcf6a8"
-            }
+            {"public_key": "01aea816a1db5886755c6d0c29ce4f6c54c5364e97b13fee60e7c99e7cecbcf6a8"}
         ],
         "website": "https://www.bluestake.site",
         "email": "hello@bluestake.site",
@@ -36,21 +29,14 @@
             }
         },
         "location": {
-            "name": "T\u00dcRK\u0130YE",
+            "name": "TÜRKİYE",
             "country": "TR",
             "latitude": 0,
             "longitude": 0
         },
         "social": {
-            "keybase": "",
-            "telegram": "",
-            "twitter": "",
-            "github": "",
-            "youtube": "",
-            "facebook": "",
-            "medium": "",
-            "reddit": "",
-            "wechat": ""
+            "keybase": "", "telegram": "", "twitter": "", "github": "",
+            "youtube": "", "facebook": "", "medium": "", "reddit": "", "wechat": ""
         }
     },
     "nodes": [
@@ -58,14 +44,12 @@
             "public_key": "01aea816a1db5886755c6d0c29ce4f6c54c5364e97b13fee60e7c99e7cecbcf6a8",
             "description": "This validator is running on a bare metal machine with top hardware specifications",
             "location": {
-                "name": "T\u00dcRK\u0130YE",
+                "name": "TÜRKİYE",
                 "country": "TR",
                 "latitude": 0,
                 "longitude": 0
             },
-            "functionality": [
-                "validator"
-            ]
+            "functionality": ["validator"]
         }
     ]
 }
