@@ -10,8 +10,7 @@
         ],
         "branding": {
             "logo": {
-                "png_256": "https://www.bluestake.site/assets/logo-256.png",
-                "svg": "https://www.bluestake.site/assets/logo.svg"
+                "png_256": "https://raw.githubusercontent.com/omercanga/bluestake/main/assets/bluestake_logo.png"
             }
         }
     },
