@@ -3,11 +3,11 @@
         "name": "BlueStake",
         "description": "Professional and secure staking services for the Casper Network.",
         "type": ["validator"],
+        "email": "contact@bluestake.site",
+        "website": "https://www.bluestake.site",
         "affiliated_accounts": [
             {"public_key": "01aea816a1db5886755c6d0c29ce4f6c54c5364e97b13fee60e7c99e7cecbcf6a8"}
         ],
-        "website": "https://www.bluestake.site",
-        "email": "contact@bluestake.site",
         "branding": {
             "logo": {
                 "png_256": "https://www.bluestake.site/assets/logo-256.png",
