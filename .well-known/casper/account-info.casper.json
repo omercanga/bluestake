@@ -23,7 +23,7 @@
     },
     "affiliated_accounts": [
       {
-        "public_key": "01Fe63f2F708c18cf4354f16825FB45cD5a5BeAa93Fd15A5d07c8c5430E900514d"
+        "public_key": "01fe63f2f708c18cf4354f16825fb45cd5a5beaa93fd15a5d07c8c5430e900514d"
       },
       {
         "public_key": "01aea816a1db5886755c6d0c29ce4f6c54c5364e97b13fee60e7c99e7cecbcf6a8"
@@ -58,7 +58,20 @@
   },
   "nodes": [
     {
-      "public_key": "01Fe63f2F708c18cf4354f16825FB45cD5a5BeAa93Fd15A5d07c8c5430E900514d",
+      "public_key": "01fe63f2f708c18cf4354f16825fb45cd5a5beaa93fd15a5d07c8c5430e900514d",
+      "description": "This validator is running on a bare metal machine with top hardware specifications. Casper Mainnet Node.",
+      "location": {
+        "name": "TÜRKİYE",
+        "country": "TR",
+        "latitude": 0,
+        "longitude": 0
+      },
+      "functionality": [
+        "validator"
+      ]
+    },
+    {
+      "public_key": "01aea816a1db5886755c6d0c29ce4f6c54c5364e97b13fee60e7c99e7cecbcf6a8",
       "description": "This validator is running on a bare metal machine with top hardware specifications. Casper Mainnet Node.",
       "location": {
         "name": "TÜRKİYE",
@@ -80,9 +93,8 @@
         "longitude": 0
       },
       "functionality": [
-        "validator"
+        "testnet"
       ]
     }
   ]
 }
-
